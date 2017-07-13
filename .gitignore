@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 
 *.xml
+=======
+node_modules
+.idea
+.DS_Store
+uploads
+backups
+>>>>>>> c8efc1712d4f91315031d965fa750d28ff57813d
