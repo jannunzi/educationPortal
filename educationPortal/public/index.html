@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html  lang="en" ng-app="EducationPortal">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,86 +14,56 @@
     <link href="vendor/bootstrap/theme.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+
+
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/ng-rateit.js"></script>
+    <script src='js/vendor/textangular/textAngular-rangy.min.js'></script>
+    <script src='js/vendor/textangular/textAngular-sanitize.min.js'></script>
+    <script src='js/vendor/textangular/textAngular.min.js'></script>
+    <script src='js/bootstrap.js'></script>
+
+    <script src="vendor/angular-ui-bootstrap/ui-bootstrap.js"></script>
+    <script src="vendor/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+
 </head>
 <body>
 
+<div ng-view>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="menubar">
-        <div class="col-xs-7 col-sm-4 col-lg-2">
-            <div class="navbar-header">
-                <a class="navbar-brand " href="#"><b>Education Portal</b></a>
-            </div>
-        </div>
-
-
-        <div class="col-xs-5 col-sm-5 col-lg-7">
-            <div class="input-group">
-                <input type="text"
-                       placeholder="Search Courses"
-                       class="form-control">
-                <span class="input-group-btn">
-            <a  href="#"
-                class="btn btn-default"
-                type="button">
-                <span class="glyphicon glyphicon-search"></span>
-            </a>
-            </span>
-            </div>
-        </div>
-
-        <div class="col-sm-1 hidden-xs">
-        </div>
-        <div class="col-sm-1 hidden-xs">
-            <div class="navbar-header">
-                <a class="navbar-brand btn" href="#">Login</a>
-            </div>
-        </div>
-
-        <div class="col-sm-1 hidden-xs">
-            <div class="navbar-header">
-                <a class="navbar-brand btn" href="#">Register</a>
-            </div>
-        </div>
-
-    </div>
-</nav>
-
-<header class="image" id="home">
-    <img class="w3-image" src="http://www.uwinnipeg.ca/indigenous-course-requirement/images/icr-img.jpg">
-</header>
-
-
-<!-- Page content -->
-<div class="courses">
-
-    <!-- Project Section -->
-    <div class=container-fluid id="course">
-        <h3>Courses</h3>
-    </div>
-    <div class="list-courses">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://radiozdk.com/main/wp-content/uploads/2016/09/COMP.jpg">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="img-responsive" src="https://www.seokarachi.com/wp-content/uploads/2017/05/Computer-Short-Courses-Pakistan.jpg">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://cdn.yourarticlelibrary.com/wp-content/uploads/2013/12/b846.jpg">
-            </div>
-        </div>
-    </div>
 </div>
+
+<!-------------------------  Loading other js files --------------------------------------------------------   -->
+
+<script src="js/vendor/jquery-3.1.1.min.js"></script>
+<script src="js/vendor/jquery-ui.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/ng-rateit.js"></script>
+<script src='js/vendor/textangular/textAngular-rangy.min.js'></script>
+<script src='js/vendor/textangular/textAngular-sanitize.min.js'></script>
+<script src='js/vendor/textangular/textAngular.min.js'></script>
+<script src='js/bootstrap.js'></script>
+
+<script src="vendor/angular-ui-bootstrap/ui-bootstrap.js"></script>
+<script src="vendor/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<script src="app.js"></script>
+<script src="config.js"></script>
+
+<script src="views/user/controller/register.controller.js"></script>
+<script src="views/user/controller/profile.controller.js"></script>
+<script src="views/services/user.service.client.js"></script>
+
 
 </body>
 </html>
