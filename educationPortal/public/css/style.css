@@ -36,7 +36,7 @@ div.list-courses{
 
 }
 .yw-container{
-    margin-top: 80px;
+    margin-top: 70px;
 }
 
 input.form-control,
@@ -46,4 +46,9 @@ select.form-control{
 }
 .list-group-item.active a{
     color:white;
+}
+
+h3.yw-pageTitle{
+    text-align: center;
+    color:#9d9d9d;
 }
