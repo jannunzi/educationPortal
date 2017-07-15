@@ -35,3 +35,15 @@ div.list-courses{
     padding-top: 15px;
 
 }
+.yw-container{
+    margin-top: 80px;
+}
+
+input.form-control,
+textarea.form-control,
+select.form-control{
+    margin-bottom: 5px;
+}
+.list-group-item.active a{
+    color:white;
+}
