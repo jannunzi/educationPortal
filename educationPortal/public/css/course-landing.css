@@ -196,3 +196,25 @@ body {
 .no-border {
     border-style: none;
 }
+div.courses{
+    padding-top: 20px;
+    max-width:1564px;
+    margin-top: 430px;
+}
+
+
+.img-responsive{
+    height: 200px;
+}
+
+.image{
+    max-width:1500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.list-courses{
+    padding-top: 15px;
+
+}
+
