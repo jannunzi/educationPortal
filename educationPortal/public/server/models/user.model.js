@@ -57,8 +57,6 @@ module.exports= function(db){
 
     function createNewUser(userDetails) {
         var deferred = q.defer();
-        var userName = userDetails.username;
-        var email = userDetails.email;
         User.create(userDetails, function (err, doc) {
             if (err) {
                 deferred.reject(err);

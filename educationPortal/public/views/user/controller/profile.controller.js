@@ -7,12 +7,13 @@
     function ProfileController(UserService,$rootScope){
 
         var currentUser= $rootScope.currentUser;
+        console.log("currentuser", currentUser);
         var vm=this;
         vm.message= null;
-        vm.firstName=currentUser.firstname;
-        vm.lastName=currentUser.lastname;
+        vm.firstname=currentUser.firstname;
+        vm.lastname=currentUser.lastname;
         vm.username=currentUser.username;
-        vm.password=currentUser.password;
+        vm.password1=currentUser.password1;
         //vm.email=currentUser.emails.join(",");
         //vm.phones=currentUser.phones.join(",");
         vm.update=update;
