@@ -52,3 +52,43 @@ h3.yw-pageTitle{
     text-align: center;
     color:#9d9d9d;
 }
+img.yw-course{
+    width: 100%;
+    min-height: 50%;
+}
+.yw-courseBox{
+    border: 1px solid #bcbcbc;
+    margin: auto;
+    margin-bottom: 20px;
+    min-height: 250px;
+}
+.yw-courseInfo{
+    margin-left: 15px;
+
+}
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.yw-row{
+    width: 90%;
+    margin: auto;
+    padding-top: 15px;
+}
+.showCourseInfo{
+    opacity: 0;
+}
+#yw-courseBox:hover + #showCourseInfo{
+    opacity: 1;
+}
+.yw-course.blank{
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+@media (min-width: 768px){
+    /*if the screen is smaller than 768, this rule does not apply*/
+    .yw-courseBox{
+        min-height: 270px;
+    }
+}
