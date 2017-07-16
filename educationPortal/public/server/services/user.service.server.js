@@ -15,9 +15,11 @@ module.exports = function(app,userModel) {
                 function(user){
                     if(user) {
                         res.json(null);
+                        return null;
                     } else {
                         newUser.password = bcrypt.hashSync(newUser.password);
-                        return userModel.createNewUser(newUser);
+                        userModel.createNewUser(newUser);
+                        return res.json(newUser);
                     }
                 },
                 function(err){

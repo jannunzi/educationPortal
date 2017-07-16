@@ -10,12 +10,12 @@
         console.log("currentuser", currentUser);
         var vm=this;
         vm.message= null;
-        vm.firstname=currentUser.firstname;
-        vm.lastname=currentUser.lastname;
-        vm.username=currentUser.username;
-        vm.password1=currentUser.password1;
-        //vm.email=currentUser.emails.join(",");
-        //vm.phones=currentUser.phones.join(",");
+        console.log("first name ", currentUser.data.firstname);
+        vm.firstname=currentUser.data.firstname;
+        vm.lastname=currentUser.data.lastname;
+        vm.username=currentUser.data.username;
+        vm.password=currentUser.data.password;
+        vm.email=currentUser.data.email;
         vm.update=update;
 
         function init(){

@@ -17,8 +17,6 @@ module.exports= function(db){
 
     function findUserByUsername(userName){
         var deferred= q.defer();
-        console.log("find user with user name");
-        console.log(userName);
 
         User.findOne (
             {"username": userName},

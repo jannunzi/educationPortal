@@ -42,7 +42,7 @@
 
             UserService.register(user)
                 .then(function (user) {
-                        if (user != null) {
+                        if (user.data != null) {
                             $rootScope.currentUser = user;
                             $location.url("/profile");
                         }
