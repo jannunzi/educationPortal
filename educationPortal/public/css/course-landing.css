@@ -165,11 +165,34 @@ ul.instructor-details > li:last-child {
     }
 }
 
-footer {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
+
 
 p.copyright {
     margin: 15px 0 0;
+}
+input.form-control,
+textarea.form-control,
+select.form-control {
+    margin-bottom: 5px;
+}
+
+body {
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+
+.navbar-default {
+    background-color: lightgray;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.learning-objectives_content{
+    margin-left: 75px;
+}
+
+.no-border {
+    border-style: none;
 }
