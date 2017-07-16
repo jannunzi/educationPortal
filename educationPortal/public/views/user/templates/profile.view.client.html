@@ -40,13 +40,13 @@
 
 <div name="test" class="container" >
 
-    <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
+    <div ng-show="model.message" class="alert alert-danger" role="alert">{{model.message}}</div>
     <h2>Profile</h2>
     <form class="form-horizontal">
         <div class="form-group">
             <label class="col-sm-2 control-label" for="uname"> UserName</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="UserName" id="uname" ng-model="model.username">
+                <input type="text" class="form-control" placeholder="UserName" id="uname" ng-model="model.username" readonly>
             </div>
         </div>
 
@@ -81,7 +81,7 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="button" class="btn btn-primary" ng-click="model.update(model.username,model.password,
-                        model.firstName,model.lastName,model.email,model.phones)">Update</button>
+                        model.firstname,model.lastname,model.email)">Update</button>
             </div>
         </div>
 

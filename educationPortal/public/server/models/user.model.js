@@ -31,17 +31,17 @@ module.exports= function(db){
         return deferred.promise;
     }
 
-    function updateUser (id, userDetails) {
+    function updateUser (currentUsername, userDetails) {
         var deferred= q.defer();
         User.update (
-            {"_id": id},
-            {$set: {"username":userDetails.username,
+            {"username": currentUsername},
+            {$set: {
+                //"username":userDetails.username,
                 "password":userDetails.password,
-                "firstName":userDetails.firstName,
-                "lastName":userDetails.lastName,
-                "emails":userDetails.emails,
-                "phones":userDetails.phones,
-                "roles":userDetails.roles}},
+                "firstname":userDetails.firstname,
+                "lastname":userDetails.lastname,
+                "email":userDetails.email
+            }},
             function (err, stats) {
                 if(!err){
                     deferred.resolve(stats);

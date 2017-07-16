@@ -23,11 +23,11 @@
         }
         init;
 
-        function update(username,password,firstName,lastName,email,phones){
-            var newDetails= {"username" : username, "firstName": firstName,
-                "lastName":lastName , "emails" :email.split(",") ,"phones" :phones.split(",") ,"password" :password};
+        function update(username,password,firstname,lastname,email){
+            var newDetails= {"username" : username, "firstname": firstname,
+                "lastname":lastname , "email" :email, "password" :password};
 
-            UserService.updateUser(newDetails,currentUser._id)
+            UserService.updateUser(newDetails)
                 .then(
                     function(response){
                         $rootScope.currentUser=response.data;
