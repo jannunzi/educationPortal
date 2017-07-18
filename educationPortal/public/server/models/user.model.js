@@ -11,9 +11,26 @@ module.exports= function(db){
         findUserByUsername : findUserByUsername,
         createNewUser :createNewUser,
         updateUser:updateUser,
-        getUserByUserName:getUserByUserName
+        getUserByUserName:getUserByUserName,
+        findUserByCredentials : findUserByCredentials
     }
     return api;
+
+    function findUserByCredentials(credentials) {
+        var deferred= q.defer();
+
+        User.findOne (
+            {"username": userName},
+            function (err, stats) {
+                if(!err){
+                    deferred.resolve(stats);
+                }
+                else{
+                    deferred.reject(err);
+                }
+            } );
+        return deferred.promise;
+    }
 
     function findUserByUsername(userName){
         var deferred= q.defer();
@@ -22,6 +39,7 @@ module.exports= function(db){
             {"username": userName},
             function (err, stats) {
                 if(!err){
+                    console.log("model success" + userName);
                     deferred.resolve(stats);
                 }
                 else{

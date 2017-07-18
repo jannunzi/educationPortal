@@ -6,6 +6,7 @@ module.exports = function (app, userModel) {
 
     app.post('/api/register', register);
     app.put("/api/updateUser", updateUser);
+    app.post('/api/login', login);
 
     function register(req, res) {
         var newUser = req.body;
@@ -28,6 +29,21 @@ module.exports = function (app, userModel) {
             );
 
         //call login function after this
+    }
+
+    function login(req, res) {
+        console.log("Hello");
+        var userName = req.body;
+        userModel
+            .findUserByCredentials(userName)
+            .then(function (user)
+                {
+                    console.log("Success service");
+                    res.json(user);
+                        },
+                        function (err) {
+                            res.status(400).send(err);
+                        });
     }
 
     function updateUser(req, res) {
