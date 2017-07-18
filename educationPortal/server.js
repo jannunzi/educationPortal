@@ -12,11 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var connectionString = 'mongodb://127.0.0.1:27017/education-portal';
 
-var mlabUsername = process.env.MONGOLAB_USERNAME;
-var mlabPassword = process.env.MONGOLAB_PASSWORD;
-if(mlabUsername && mlabPassword) {
-    connectionString = 'mongodb://'+mlabUsername+':'+mlabPassword+'@ds151018.mlab.com:51018/heroku_13mhwkq8'
-}
+// var mlabUsername = process.env.MONGOLAB_USERNAME;
+// var mlabPassword = process.env.MONGOLAB_PASSWORD;
+// if(mlabUsername && mlabPassword) {
+//     connectionString = 'mongodb://'+mlabUsername+':'+mlabPassword+'@ds151018.mlab.com:51018/heroku_13mhwkq8'
+// }
 
 mongoose.Promise = require('q').Promise;
 

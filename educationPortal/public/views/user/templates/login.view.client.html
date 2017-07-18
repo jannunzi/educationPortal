@@ -3,39 +3,38 @@
 <head>
     <script src="../../../vendor/angular/angular.min.js"></script>
     <script src="../app.js"></script>
-    <script src="../controller/login.controller.view.js"></script>
+    <!--<script src="../controller/login.controller.js"></script>-->
     <link href="../../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../../../css/styles.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body ng-controller="LoginController">
 <div class="container-fluid">
     <h1>Login</h1>
 
-    <div ng-show="message" class="alert alert-info">{{model.message}}</div>
+    <div ng-show="message" class="alert alert-danger">{{model.message}}</div>
 
     <label for="username">Username</label>
-    <input ng-model="username"
+    <input ng-model="model.user.username"
            type="text"
            id="username"
            class="form-control"
            placeholder="bob123"/>
 
     <label for="username">Password</label>
-    <input ng-model="password"
+    <input ng-model="model.user.password"
            type="password"
            id="password"
            class="form-control"
            placeholder="qwer1234zxcv"/>
 
-    <a ng-click="login(username, password)"
+    <a ng-click="model.login(model.user)"
        class="btn btn-primary btn-block">
         Login
     </a>
 
     <a class="btn btn-success btn-block"
-       href="#!/register">
+       href="#/register">
         Register
     </a>
 
