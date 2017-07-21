@@ -20,6 +20,11 @@ div.courses{
     margin-top: 430px;
 }
 
+div.panel{
+    background-color: white;
+    height: 320px;
+}
+
 
 img.img-responsive{
     height: 200px;
@@ -34,4 +39,7 @@ img.img-responsive{
 div.list-courses{
     padding-top: 15px;
 
+}
+body{
+    background-color: #f8f8f8;
 }
