@@ -27,6 +27,11 @@
                 controller:"LoginController",
                 controllerAs:"model"
             })
+            .when("/instructor/:instructorId/course/:courseId/curriculum", {
+                templateUrl: "views/course/course-edit/template/curriculum.instructor.view.client.html",
+                controller:"courseController",
+                controllerAs:"model"
+            })
 
 
             .otherwise({
