@@ -32,7 +32,8 @@
             findCourseByInstructorId : findCourseByInstructorId,
             findCourseByCourseId : findCourseByCourseId,
             findCurriculumByCourseId: findCurriculumByCourseId,
-            addCurriculumItem: addCurriculumItem
+            addCurriculumItem: addCurriculumItem,
+            deleteCurriculumItem: deleteCurriculumItem
         };
 
         return api;
@@ -66,14 +67,26 @@
             }
             return results;
         }
+        function fincChapterById(chapterId) {
+            var results=[];
+            for( var c in curriculum){
+                if(curriculum[c]._id===chapterId){
+                    results.push(curriculum[c]);
+                }
+            }
+            return results;
+        }
 
         function addCurriculumItem(_curriculum) {
             _curriculum._id = (new Date()).getTime()+"";
             curriculum.push(_curriculum);
             return curriculum;
         }
-        function deleteCurriculumItem() {
-
+        function deleteCurriculumItem(chapterId) {
+            var result = fincChapterById(chapterId);
+            var index = curriculum.indexOf(result);
+            curriculum.splice(index,1);
+            return curriculum;
         }
 
         // function createUser(user) {

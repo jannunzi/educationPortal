@@ -9,13 +9,13 @@
         var model = this;
         model.courseId = $routeParams.courseId;
         model.instructorId = $routeParams.instructorId;
-
+        model.addCurriculumItem =addCurriculumItem;
+        model.deleteCurriculumItem = deleteCurriculumItem;
+        model.chapters =courseService.findCurriculumByCourseId(model.courseId);
 
         function init() {
             model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
-            model.addCurriculumItem =addCurriculumItem;
-            model.deleteCurriculumItem = deleteCurriculumItem;
-            model.chapters =courseService.findCurriculumByCourseId(model.courseId);
+
         }
         init();
 
@@ -23,11 +23,11 @@
             curriculum.courseId = model.courseId;
             courseService.addCurriculumItem(curriculum);
             model.chapters =courseService.findCurriculumByCourseId(model.courseId);
-            console.log(model.chapters);
         }
 
-        function deleteCurriculumItem(curriculum){
-
+        function deleteCurriculumItem(chapterId){
+            courseService.deleteCurriculumItem(chapterId);
+            model.chapters =courseService.findCurriculumByCourseId(model.courseId);
         }
         // function createWebsite(website) {
         //     website.developerId = model.userId;
