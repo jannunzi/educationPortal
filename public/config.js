@@ -28,9 +28,56 @@
                 controllerAs:"model"
             })
 
-
             .otherwise({
                 redirectTo: "/home"
             })
+
+
+
+
+            .when('/instructor/:instructorId/course/course-landing', {
+                templateUrl: "views/course/course-edit/templates/landing.view.client.html",
+                controller:"LandingController",
+                controllerAs:"model"
+            })
+
+            .when("/instructor/:instructorId/course/:courseId/general", {
+                templateUrl: "views/course/course-edit/templates/general.view.client.html",
+                controller:"GeneralController",
+                controllerAs:"model"
+            })
+
+
+            .when("/instructor/:instructorId/course/:courseId/learningaims", {
+                templateUrl: "views/course/course-edit/templates/learningaims-list.view.client.html",
+                controller:"learingaimsController",
+                controllerAs:"model"
+            })
+
+
+
+            .when("/instructor/:instructorId/course/:courseId/requirements", {
+                templateUrl: "views/course/course-edit/templates/requirements-list.view.client.html",
+                controller:"requirementsController",
+                controllerAs:"model"
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 })();

@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"" rel="stylesheet"/>
-    <link href="../../../css/course-landing.css" rel="stylesheet"/>
-    <meta charset="UTF-8">
-    <title>CS9999</title>
-</head>
 
-<body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-5 col-xs-2">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#!/">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     <span class="hidden-sm hidden-xs">CS9999</span>
                 </a>
@@ -21,7 +12,7 @@
                 Edit Course content
             </div>
             <div class="col-md-1 col-xs-1 nav-bar-plus">
-                <a href="website-list.html">
+                <a href="#!/>
                     <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
 
                 </a>
@@ -33,16 +24,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
-            <ul class="list-group">
+            <ul class="list-group"
+                ng-repeat="list in model.lists">
                 <li class="list-group-item boarder-none">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="general.html">
+                            <a href="#!/general">
                                 General
                             </a>
                         </div>
                         <div class="col-xs-1">
-                            <a href="general.html">
+                            <a href="#!/general">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -51,13 +43,13 @@
                 <li class="list-group-item boarder-none">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="learningaims.html">
+                            <a href="#/!learningaims">
                                 Learning Aims
                             </a>
                         </div>
 
                         <div class="col-xs-1">
-                            <a href="learningaims.html">
+                            <a href="#/!learningaims">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -66,12 +58,12 @@
                 <li class="list-group-item boarder-none">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="requirements.html">
+                            <a href="#/!requirements">
                                Requirement
                             </a>
                         </div>
                         <div class="col-xs-1">
-                            <a href="requirements.html">
+                            <a href="#/!requirements">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -80,7 +72,7 @@
                 <li class="list-group-item boarder-none">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="#">
+                            <a href="#/!">
                                Curriculum
                             </a>
                         </div>
@@ -154,4 +146,3 @@
     </div>
 </div>
 
-</body>
