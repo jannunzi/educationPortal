@@ -7,6 +7,7 @@ courseModel.deleteCourse = deleteCourse;
 courseModel.updateCourse = updateCourse;
 courseModel.findCourseById = findCourseById;
 courseModel.findCourseByTitle = findCourseByTitle;
+courseModel.findAllCourses = findAllCourses;
 
 module.exports = courseModel;
 
@@ -35,6 +36,10 @@ function findCourseByTitle(title) {
     return courseModel.find({title: title});
 }
 
+
+function findAllCourses() {
+    return courseModel.find();
+}
 
 
 

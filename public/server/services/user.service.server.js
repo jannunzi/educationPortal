@@ -18,7 +18,7 @@ module.exports = function (app, userModel) {
                         res.json(null);
                         return null;
                     } else {
-                        newUser.password = bcrypt.hashSync(newUser.password);
+                       newUser.password = bcrypt.hashSync(newUser.password);
                         userModel.createNewUser(newUser);
                         return res.json(newUser);
                     }
@@ -36,12 +36,11 @@ module.exports = function (app, userModel) {
         var userName = req.body;
         userModel
             .findUserByCredentials(userName)
-            .then(function (user)
-                {
-                    console.log("Success service");
-                    res.json(user);
-                        },
-                        function (err) {
+            .then(function (user) {
+                console.log(userName.password.trim() +" "+  user.password);
+                        console.log("Success service");
+                        res.json(user);
+                },function (err) {
                             res.status(400).send(err);
                         });
     }

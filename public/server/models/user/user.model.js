@@ -20,7 +20,7 @@ module.exports= function(db){
         var deferred= q.defer();
 
         User.findOne (
-            {"username": userName},
+            {"username": credentials.username},
             function (err, stats) {
                 if(!err){
                     deferred.resolve(stats);

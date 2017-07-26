@@ -2,14 +2,51 @@
 <html lang="en">
 <head>
     <script src="../../../vendor/angular/angular.min.js"></script>
-    <script src="../app.js"></script>
+    <script src="../../../app.js"></script>
     <!--<script src="../controller/login.controller.js"></script>-->
     <link href="../../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body ng-controller="LoginController">
-<div class="container-fluid">
+
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="menubar">
+            <div class="col-xs-7 col-sm-4 col-lg-2">
+                <div class="navbar-header">
+                    <a class="navbar-brand " href="#"><b>Education Portal</b></a>
+                </div>
+            </div>
+
+
+            <div class="col-xs-5 col-sm-5 col-lg-7">
+                <div class="input-group">
+                    <input type="text"
+                           placeholder="Search Courses"
+                           class="form-control">
+                    <span class="input-group-btn">
+            <a  href="#"
+                class="btn btn-default"
+                type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+            </span>
+                </div>
+            </div>
+
+            <div class="col-sm-1 hidden-xs">
+            </div>
+            <div class="col-sm-1 hidden-xs">
+                <div class="navbar-header">
+                    <a class="navbar-brand btn" href="#/register">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
     <h1>Login</h1>
 
     <div ng-show="message" class="alert alert-danger">{{model.message}}</div>
@@ -21,22 +58,20 @@
            class="form-control"
            placeholder="Bob Marley"/>
 
+
     <label for="username">Password</label>
     <input ng-model="model.user.password"
            type="password"
            id="password"
            class="form-control"
            placeholder="******"/>
+    <br>
 
     <a ng-click="model.login(model.user)"
        class="btn btn-primary btn-block">
         Login
     </a>
 
-    <a class="btn btn-success btn-block"
-       href="#/register">
-        Register
-    </a>
 
 </body>
 </html>
