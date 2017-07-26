@@ -25,91 +25,22 @@
     <div class="row">
         <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
             <ul class="list-group">
-                <li class="list-group-item boarder-none">
+                <li class="list-group-item boarder-none"
+                    ng-repeat="list in model.lists">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="general.html">
-                                General
+                            <a href="#/instructor/:instructorId/course/:courseId/general">
+                                {{list}}
                             </a>
                         </div>
                         <div class="col-xs-1">
-                            <a href="general.html">
+                            <a href="#!/general">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
                     </div>
                 </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="learningaims.html">
-                                Learning Aims
-                            </a>
-                        </div>
 
-                        <div class="col-xs-1">
-                            <a href="learningaims.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="requirements.html">
-                                Requirement
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="requirements.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#">
-                                Curriculum
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#">
-                                Instructor
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#">
-                                Reviews
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </div>
 
@@ -122,8 +53,37 @@
                 <li class="list-group-item no-border">
                     <div class="row">
                         <div class="col-xs-10">
+                            <input  class="form-control"
+                                    value="Make REAL web applications using cutting-edge technologies"
+                                    ng-model="model.getlearningAims[0]"
+                                    type= "text">
+                            </input>
+                        </div>
+
+                        <!--<a class="btn btn-block btn-success"-->
+                           <!--ng-click="model.createNewCourse(course)">create new course</a>-->
+
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
+
+                                  aria-hidden="true">
+                            </span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
+                            </span>
+                        </div>
+                    </div>
+
+
+                </li>
+                <li class="list-group-item no-border">
+                    <div class="row">
+                        <div class="col-xs-10">
                             <input class="form-control"
-                               value="Make REAL web applications using cutting-edge technologies" type="class">
+                                   value="Make REAL web applications using cutting-edge technologies"
+                                   ng-model="model.courses.learningAims[0]"
+                                   type="text">
                             </input>
                         </div>
                         <div class="col-xs-1">
@@ -144,7 +104,9 @@
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
-                                   value="Make REAL web applications using cutting-edge technologies" type="class">
+                                   value="Make REAL web applications using cutting-edge technologies"
+                                   ng-model="model.courses.learningAims[0]"
+                                   type="text">
                             </input>
                         </div>
                         <div class="col-xs-1">
@@ -165,7 +127,9 @@
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
-                                   value="Make REAL web applications using cutting-edge technologies" type="class">
+                                   value="Make REAL web applications using cutting-edge technologies"
+                                   ng-model="model.courses.learningAims[0]"
+                                   type="text">
                             </input>
                         </div>
                         <div class="col-xs-1">
@@ -186,29 +150,10 @@
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
-                                   value="Make REAL web applications using cutting-edge technologies" type="class">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                    type="class"
-                                    placeholder="Please add new learning aims for this course">
+                                   value="Make REAL web applications using cutting-edge technologies"
+                                   ng-model="getlearningAims[4]"
+                                   placeholder="Make REAL web applications using cutting-edge technologies"
+                                   type="text">
                             </input>
                         </div>
                         <div class="col-xs-1">

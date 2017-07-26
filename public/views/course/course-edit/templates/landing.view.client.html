@@ -41,9 +41,7 @@
             </span>
             </div>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
 </nav>
 
 <div class="jumbotron">
@@ -62,84 +60,26 @@
     <div class="list-courses">
         <div class="col-xs-12 col-sm-6 col-md-3">
             <div>
-                <a href="course-new.html">
-                    <span>Add new course</span>
+                <a href="#/instructor/{{model.instructorId}}/course/new">
+                    Add new course</a>
                     <img class="img-responsive" src="../../../img/plus%202.png">
-                </a>
+
+
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3"
+             ng-repeat= "course in model.courses">
             <div>
-                <a href="general.html">
-                    <span>CS5610</span>
+                <a href="#/instructor/{{model.instructorId}}/course/123/general">
+
+
+                    <span>{{course.courseName}}</span>
                     <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
+                         ng-src={{course.courseUrl}}>
                 </a>
             </div>
         </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
-                <a href="general.html">
-                    <span>CS4510</span>
-                    <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
-                <a href="general.html">
-                    <span>IS1500</span>
-                    <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
-                <a href="general.html">
-                    <span>CS4510</span>
-                    <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
-                <a href="general.html">
-                    <span>IS1500</span>
-                    <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
-                <a href="general.html">
-                    <span>CS4510</span>
-                    <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div>
-                <a href="general.html">
-                    <span>IS1500</span>
-                    <img class="img-responsive"
-                         src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                </a>
-            </div>
-        </div>
-
-
     </div>
 </div>
 

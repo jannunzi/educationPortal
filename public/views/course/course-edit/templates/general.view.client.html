@@ -14,7 +14,6 @@
             <div class="col-md-1 col-xs-1 nav-bar-plus">
                 <a href="#!/>
                     <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
-
                 </a>
             </div>
         </div>
@@ -24,88 +23,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
-            <ul class="list-group"
-                ng-repeat="list in model.lists">
-                <li class="list-group-item boarder-none">
+            <ul class="list-group">
+                <li class="list-group-item boarder-none"
+                    ng-repeat="list in model.lists">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="#!/general">
-                                General
+                            <a href="#/instructor/:instructorId/course/:courseId/general">
+                                {{list}}
                             </a>
                         </div>
                         <div class="col-xs-1">
                             <a href="#!/general">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#/!learningaims">
-                                Learning Aims
-                            </a>
-                        </div>
-
-                        <div class="col-xs-1">
-                            <a href="#/!learningaims">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#/!requirements">
-                               Requirement
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#/!requirements">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#/!">
-                               Curriculum
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#">
-                                Instructor
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#">
-                               Reviews
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -118,6 +46,7 @@
             <label for="name">Course Name</label>
             <input id="name"
                    class="form-control"
+                   ng-model="course.name"
                    value="Course Name"
                    type="text"
                    placeholder="course name"/>
@@ -127,21 +56,21 @@
             </label>
             <textarea id="description"
                       rows="8"
-                      class="form-control">This course discusses Web development sites that are dynamic, data driven, and interactive. Focuses on the software development issues of integrating multiple languages, assorted data technologies, and Web interaction. Considers AngularJS, Node.js, MongoDB, HTTP, HTML, CSS, JavaScript, AJAX, SQL, and RESTful Web services. The student is introduced to Web development through live coding sessions that illustrate applying industry standards and best practices while implementing a class project. Students are then expected to practice these concepts individually by completing the same project through several assignments. As students gain confidence through the application of their skills, students move on to implement a final project of their choosing and deploy it in a publicly available server. Students may work in teams of up to 3 members. Each student or team must also create extensive documentation of their goals, plans, design decisions, accomplishments, and user guidelines. All source files must be shared in a publicly available GitHub repository.
+                      ng-model="course.description"
+                      class="form-control">
             </textarea>
 
 
 
 
-            <a href="../course.view.html"
-               class="btn btn-block btn-success">
-                Update
-            </a>
 
-            <a href="../course.view.html"
-               class="btn btn-block btn-danger">
-                Delete
-            </a>
+            <a class="btn btn-block btn-success"
+               ng-click="model.updateCourse(course)">update</a>
+
+            <a class="btn btn-block btn-danger"
+               ng-click="model.deleteCourse(course)">delete</a>
+
+
         </div>
     </div>
 </div>
