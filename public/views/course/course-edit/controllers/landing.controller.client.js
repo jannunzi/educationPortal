@@ -9,7 +9,8 @@
 
 
         function init() {
-            model.LearningAims = courseService.getAllLearningAims();
+
+            model.courses = courseService.getAllCourses();
             model.instructorId = instructorId
 
 
