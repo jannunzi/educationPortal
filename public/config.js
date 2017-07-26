@@ -32,7 +32,11 @@
                 controller:"courseController",
                 controllerAs:"model"
             })
-
+            .when("/instructor/:instructorId/course/:courseId/profile", {
+                templateUrl: "views/course/course-edit/template/profile.instructor.view.client.html",
+                controller:"instructorController",
+                controllerAs:"model"
+            })
 
             .otherwise({
                 redirectTo: "/home"

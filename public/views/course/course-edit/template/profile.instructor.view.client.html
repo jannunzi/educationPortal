@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"" rel="stylesheet"/>
-    <link href="../../../../css/course-landing/course-landing.css" rel="stylesheet"/>
-    <meta charset="UTF-8">
-    <title> Learning Aims</title>
-</head>
-
-<body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="row">
@@ -129,23 +119,23 @@
             </div>
             <label for="name">Name </label>
             <input id="name"
+                   ng-model="instructor.instructorName"
                    class="form-control"
                    value="Chapter 1"/>
             <label for="profile">Profile </label>
             <textarea id="profile"
+                      ng-model="instructor.instructorDescription"
                       class="form-control"
-                      ng-model="model.website.description"
-                      rows="6">Profile of the instructor</textarea>
-            <a href="website-list.html" class="btn btn-block btn-success">Add</a>
+                      rows="6">{{model.instructor.instructorDescription}}</textarea>
+            <a href="website-list.html" class="btn btn-block btn-success">Update</a>
             <a href="website-list.html" class="btn btn-block btn-danger">Delete</a>
+            {{instructor}}
         </div>
 
 
 
     </div>
 </div>
-
-</body>
 
 
 

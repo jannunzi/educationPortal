@@ -24,8 +24,8 @@
             ];
         var instructors=[
             {courseId: "123", instructorId:"123", instructorName:"Alice", instructorDescription:"Great teacher!!!", reviews:'url'},
-            {courseId: "123", instructorId:"123", instructorName:"Alice", instructorDescription:"Great teacher2!!!", reviews:'url'},
-            {courseId: "123", instructorId:"123", instructorName:"Alice", instructorDescription:"Great teacher3!!!", reviews:'url'}
+            {courseId: "234", instructorId:"234", instructorName:"Bob", instructorDescription:"Great teacher2!!!", reviews:'url'},
+            {courseId: "345", instructorId:"345", instructorName:"Charly", instructorDescription:"Great teacher3!!!", reviews:'url'}
         ];
 
         var api={
@@ -33,7 +33,8 @@
             findCourseByCourseId : findCourseByCourseId,
             findCurriculumByCourseId: findCurriculumByCourseId,
             addCurriculumItem: addCurriculumItem,
-            deleteCurriculumItem: deleteCurriculumItem
+            deleteCurriculumItem: deleteCurriculumItem,
+            findInstructorById:findInstructorById
         };
 
         return api;
@@ -87,6 +88,15 @@
             var index = curriculum.indexOf(result);
             curriculum.splice(index,1);
             return curriculum;
+        }
+        function findInstructorById(id) {
+            var results=[];
+            for( var i in instructors){
+                if(instructors[i].instructorId===id){
+                    results.push(instructors[i]);
+                }
+            }
+            return results;
         }
 
         // function createUser(user) {
