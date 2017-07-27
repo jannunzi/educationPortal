@@ -11,9 +11,10 @@
 
         function init() {
             model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
-
+            model.course = courseService.findCourseByCourseId(model.courseId);
         }
         init();
+
 
 
 

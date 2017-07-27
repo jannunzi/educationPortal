@@ -42,10 +42,11 @@
 
 
         function createNewCourse(course) {
-            course._id = (new Date()).getTime() +"";
-            course.created = new Date();
-            course.updated = new Date();
-            courses.push(course);
+            newCourse = {};
+            newCourse._id = course.id;
+            newCourse.courseName = course.name;
+            newCourse.courseDescription = course.description;
+            courses.push(newCourse);
         }
 
 

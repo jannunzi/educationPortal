@@ -6,7 +6,7 @@
 
     function createNewCourseController($routeParams,$location,courseService){
         var model = this;
-        var instructorId=$routeParams.instructorId;
+        model.instructorId=$routeParams.instructorId;
         model.createNewCourse  = createNewCourse;
 
         function init() {
@@ -21,7 +21,8 @@
 
         function createNewCourse(course){
             courseService.createNewCourse(course);
-            $location.url("/instructor/+ model.instructorId +/course/new");
+            var url = "/instructor/" + model.instructorId + "/course/course-landing";
+            $location.url(url);
         }
 
 
