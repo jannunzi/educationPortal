@@ -12,9 +12,9 @@
         model.addCurriculumItem =addCurriculumItem;
         model.deleteCurriculumItem = deleteCurriculumItem;
         model.chapters =courseService.findCurriculumByCourseId(model.courseId);
-
+        model.lists =courseService.getList();
         function init() {
-            model.lists =courseService.getList();
+
 
         }
         init();

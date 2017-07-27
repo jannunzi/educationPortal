@@ -9,13 +9,7 @@
         .factory('courseService', courseService);
 
     function courseService() {
-        var lists =["General": "general",
-            "Learning Aims":"aims",
-            "Requirements":"requirements",
-            "Curriculum":"curriculum",
-            "Instructor":"instructor",
-            "Reviews": "reviews"];
-
+        var lists =["General", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
         var curriculum=
             [
                 {courseId: "123", _id:"1231", chapter:"Alice", description:"Wonderland"  },
