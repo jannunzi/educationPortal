@@ -14,7 +14,7 @@
         model.chapters =courseService.findCurriculumByCourseId(model.courseId);
 
         function init() {
-            model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
+            model.lists =courseService.getList();
 
         }
         init();
@@ -34,5 +34,6 @@
         //     websiteService.createWebsite(website);
         //     $location.url('/user/'+model.userId+ '/website');
         // }
+
     }
 })();

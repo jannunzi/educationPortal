@@ -43,3 +43,7 @@ div.list-courses{
 body{
     background-color: #f8f8f8;
 }
+
+a.btn{
+    margin-bottom: 5px;
+}

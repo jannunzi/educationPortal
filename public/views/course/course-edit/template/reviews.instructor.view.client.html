@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"" rel="stylesheet"/>
-    <link href="../../../../css/course-landing/course-landing.css" rel="stylesheet"/>
-    <meta charset="UTF-8">
-    <title> Learning Aims</title>
-</head>
-
-<body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="row">
@@ -34,86 +24,16 @@
     <div class="row">
         <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
             <ul class="list-group">
-                <li class="list-group-item boarder-none">
+                <li class="list-group-item boarder-none"
+                    ng-repeat="list in model.lists">
                     <div class="row">
                         <div class="col-xs-10">
                             <a href="../general.html">
-                                General
+                                {{list}}
                             </a>
                         </div>
                         <div class="col-xs-1">
                             <a href="../general.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="../learningaims.html">
-                                Learning Aims
-                            </a>
-                        </div>
-
-                        <div class="col-xs-1">
-                            <a href="../learningaims.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="../requirements.html">
-                                Requirement
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="../requirements.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="curriculum.instructor.view.client.html">
-                                Curriculum
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="curriculum.instructor.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="profile.instructor.view.client.html">
-                                Instructor
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="profile.instructor.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="reviews.instructor.view.client.html">
-                                Reviews
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="reviews.instructor.view.client.html">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -129,23 +49,30 @@
             </div>
             <label for="reviewTitle">Title </label>
             <input id="reviewTitle"
+                   ng-model="review.title"
                    class="form-control"
-                   value="Best Course Ever!"/>
+                   placeholder="Best Course Ever!"/>
             <label for="reviewDetails">Reviews Details </label>
             <textarea id="reviewDetails"
+                      ng-model="review.details"
                       class="form-control"
-                      ng-model="Reviews Details"
-                      rows="6">Perfect for students interested in web development.</textarea>
-            <a href="website-list.html" class="btn btn-block btn-success">Add</a>
-            <a href="website-list.html" class="btn btn-block btn-danger">Delete</a>
+                      rows="6"
+                      placeholder="Perfect for students interested in web development.">
+            </textarea>
+            <label for="reviewDetails">Links to Other Reviews </label>
+            <input id="reviewTitle"
+                   ng-model="review.url"
+                   class="form-control"
+                   placeholder="https://udemy.com"/>
+
+            <a ng-click="model.addReviews(review)" class="btn btn-block btn-success">Add</a>
+            <div ng-show="model.success" class="alert alert-success" role="alert">{{model.success}}</div>
         </div>
 
 
 
     </div>
 </div>
-
-</body>
 
 
 

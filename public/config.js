@@ -37,6 +37,11 @@
                 controller:"instructorController",
                 controllerAs:"model"
             })
+            .when("/instructor/:instructorId/course/:courseId/reviews", {
+                templateUrl: "views/course/course-edit/template/reviews.instructor.view.client.html",
+                controller:"reviewsController",
+                controllerAs:"model"
+            })
 
             .otherwise({
                 redirectTo: "/home"

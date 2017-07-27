@@ -9,6 +9,13 @@
         .factory('courseService', courseService);
 
     function courseService() {
+        var lists =["General": "general",
+            "Learning Aims":"aims",
+            "Requirements":"requirements",
+            "Curriculum":"curriculum",
+            "Instructor":"instructor",
+            "Reviews": "reviews"];
+
         var curriculum=
             [
                 {courseId: "123", _id:"1231", chapter:"Alice", description:"Wonderland"  },
@@ -23,9 +30,13 @@
                 {_id: "456", instructorId: "234", description: "jannunzi", review: "Jose",   courseName: "Annunzi", curriculum:"aaaaa" }
             ];
         var instructors=[
-            {courseId: "123", instructorId:"123", instructorName:"Alice", instructorDescription:"Great teacher!!!", reviews:'url'},
-            {courseId: "234", instructorId:"234", instructorName:"Bob", instructorDescription:"Great teacher2!!!", reviews:'url'},
-            {courseId: "345", instructorId:"345", instructorName:"Charly", instructorDescription:"Great teacher3!!!", reviews:'url'}
+            {courseId: "123", instructorId:"123", instructorName:"Alice", instructorDescription:"Great teacher!!!", reviewsId:'123'},
+            {courseId: "234", instructorId:"234", instructorName:"Bob", instructorDescription:"Great teacher2!!!", reviewsId:'234'},
+            {courseId: "345", instructorId:"345", instructorName:"Charly", instructorDescription:"Great teacher3!!!", reviewsId:'345'}
+        ];
+
+        var reviews = [
+            {courseId:"123", reviewsId:"123", url:"https://github.com", title:"Best Teacher Ever!", details:"I've been trying to learn this material for a year, using multiple online bootcamps and courses. Colt is by far the best teacher that I've encountered, and his course is far more logically organized than any other course that I've encountered. "}
         ];
 
         var api={
@@ -34,10 +45,27 @@
             findCurriculumByCourseId: findCurriculumByCourseId,
             addCurriculumItem: addCurriculumItem,
             deleteCurriculumItem: deleteCurriculumItem,
-            findInstructorById:findInstructorById
+            findInstructorById:findInstructorById,
+            updateInstructorInfo: updateInstructorInfo,
+            addReviews: addReviews,
+            getList:getList
         };
 
         return api;
+        function getList() {
+            return lists;
+        }
+        function addReviews(_review) {
+            _review._id = (new Date()).getTime()+"";
+            reviews.push(_review);
+            return reviews;
+        }
+        function updateInstructorInfo(_instructor) {
+            var instructor = findInstructorById(_instructor.instructorId);
+            instructor[0].instructorName = _instructor.instructorName;
+            instructor[0].newDescription = _instructor.instructorDescription;
+            return instructor;
+        }
 
         function findCourseByInstructorId(instructorId) {
             var results=[];

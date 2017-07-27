@@ -24,86 +24,16 @@
     <div class="row">
         <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
             <ul class="list-group">
-                <li class="list-group-item boarder-none">
+                <li class="list-group-item boarder-none"
+                    ng-repeat="list in model.lists">
                     <div class="row">
                         <div class="col-xs-10">
                             <a href="../general.html">
-                                General
+                                {{list}}
                             </a>
                         </div>
                         <div class="col-xs-1">
                             <a href="../general.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="../learningaims.html">
-                                Learning Aims
-                            </a>
-                        </div>
-
-                        <div class="col-xs-1">
-                            <a href="../learningaims.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="../requirements.html">
-                                Requirement
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="../requirements.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="curriculum.instructor.view.client.html">
-                                Curriculum
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="curriculum.instructor.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="profile.instructor.view.client.html">
-                                Instructor
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="profile.instructor.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item boarder-none">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="reviews.instructor.view.client.html">
-                                Reviews
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="reviews.instructor.view.client.html">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -121,15 +51,16 @@
             <input id="name"
                    ng-model="instructor.instructorName"
                    class="form-control"
-                   value="Chapter 1"/>
+                   placeholder="Alice"/>
             <label for="profile">Profile </label>
             <textarea id="profile"
                       ng-model="instructor.instructorDescription"
                       class="form-control"
-                      rows="6">{{model.instructor.instructorDescription}}</textarea>
-            <a href="website-list.html" class="btn btn-block btn-success">Update</a>
-            <a href="website-list.html" class="btn btn-block btn-danger">Delete</a>
-            {{instructor}}
+                      rows="6"
+                      placeholder="Your description"></textarea>
+            <a ng-click="model.updateInstructorInfo(instructor)" class="btn btn-block btn-success">Save</a>
+            <div ng-show="model.success" class="alert alert-success" role="alert">{{model.success}}</div>
+
         </div>
 
 
