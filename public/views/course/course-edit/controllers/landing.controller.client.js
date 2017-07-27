@@ -11,7 +11,7 @@
         function init() {
 
             model.courses = courseService.getAllCourses();
-            model.instructorId = instructorId
+            model.instructorId = instructorId;
 
 
         }

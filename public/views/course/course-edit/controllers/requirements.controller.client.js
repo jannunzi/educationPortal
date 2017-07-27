@@ -1,25 +1,28 @@
 (function () {
     angular.module('EducationPortal')
-        .controller('requirementController',requirementController);
+        .controller('requirementsController',requirementsController);
 
-    function requirementController($routeParams,courseService){
+    function requirementsController($routeParams, courseService){
         var model = this;
         var instructorId=$routeParams.instructorId;
+        var courseId = $routeParams.courseId;
 
 
         function init() {
-            model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
+            model.lists = [
+                "general",
+                "Learning Aims",
+                "Requirements",
+                "Curriculum",
+                "Instructor",
+                "Reviews"
+            ];
             model.requirements = courseService.getrequirements();
-            model.instructorId = instructorId
-
-
-
+            model.instructorId = instructorId;
         }
         init();
 
-
-
-
+        model.course = courseService.findCourseByCourseId(courseId);
     }
 })();
 

@@ -12,10 +12,7 @@
         function init() {
             model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
             model.learningAims = courseService.getlearningAims();
-            model.instructorId = instructorId
-
-
-
+            model.instructorId = instructorId;
         }
         init();
 

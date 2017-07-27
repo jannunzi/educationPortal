@@ -50,18 +50,18 @@
                Requirements
             </label>
             <ul class="list-group">
-                <li class="list-group-item no-border">
+                <li class="list-group-item no-border" ng-repeat="requirement in model.course.requirements">
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
                                    value="Have a computer with Internet"
-                                   ng-model="model."
+                                   ng-model="requirement"
                                    type="text">
                             </input>
                         </div>
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
+                                  aria-hidden="true" ng-click="model.deleteRequirement()">
                             </span>
                         </div>
                         <div class="col-xs-1">
@@ -70,96 +70,6 @@
                             </span>
                         </div>
                     </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                   value="Be ready to learn an insane amount of awesome stuff"
-                                   ng-model="model.requirements"
-                                   type="text">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                   value="Prepare to build real web apps!"
-                                   ng-model="model.requirements"
-                                   type="text">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                   value="Brace yourself for stupid jokes about my dog Rusty"
-                                   ng-model="model.requirements"
-                                   type="text">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                   type="text"
-                                   ng-model="model.requirements"
-                                   placeholder="Please add new requirement for this course">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-plus   btn btn-primary"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-
-                    </div>
-
-
                 </li>
             </ul>
         </div>
