@@ -22,8 +22,9 @@
             $location.url(url);
         }
 
-        function updateCourse(){
-            courseService.updateCourse(model.courseId, model.course);
+        function updateCourse(course){
+            console.log(course);
+            courseService.updateCourse(model.courseId, course);
             var url = "/instructor/" + model.instructorId + "/course/" + model.courseId+"/general";
             $location.url(url);
         }

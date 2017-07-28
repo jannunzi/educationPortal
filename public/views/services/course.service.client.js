@@ -101,6 +101,28 @@
             return result;
         }
 
+        //Update course
+        function updateCourse(courseId,course) {
+            for (var i in courses) {
+                if(courses[i]._id === courseId) {
+                    courses[i] = course;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //Delete course
+        function deleteCourse(courseId) {
+            var course = courses.find(function (course) {
+                return course._id === courseId;
+            });
+            var index = courses.indexOf(course);
+            if (index >= 0) {
+                courses.splice(index, 1);
+            }
+        }
+
         function getrequirements(){
             return courses;
         }
@@ -148,24 +170,9 @@
 
 
 
-        function updateCourse(courseId,course) {
-            for (var i in courses) {
-            if(courses[i]._id === courseId) {
-                courses[i] = course;
-                return true;
-                }
-             }
-            return false;
-         }
 
-         function deleteCourse(courseId) {
-             var course = courses.find(function (course) {
-                 return course._id === courseId;
-             });
-             var index = courses.indexOf(course);
-                courses.splice(index, 1);
 
-        }
+
 
         function findCourseByInstructorId(instructorId) {
             var results=[];
