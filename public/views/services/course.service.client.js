@@ -108,12 +108,13 @@
             return results;
         }
         function fincChapterById(chapterId) {
+            var results=[];
             for( var c in curriculum){
                 if(curriculum[c]._id===chapterId){
-                    return curriculum[c];
+                    results.push(curriculum[c]);
                 }
             }
-            return 0;
+            return results;
         }
 
         function addCurriculumItem(_curriculum) {
@@ -123,7 +124,7 @@
         }
         function deleteCurriculumItem(chapterId) {
             var result = fincChapterById(chapterId);
-            var index = curriculum.indexOf(result);
+            var index = curriculum.indexOf(result[0]);
             curriculum.splice(index,1);
             return curriculum;
         }

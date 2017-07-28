@@ -38,10 +38,8 @@
 
         function addCurriculumItem(curriculum) {
             curriculum.courseId = model.courseId;
-            var curriculumNew = courseService.addCurriculumItem(curriculum);
-            $location.url("/instructor/"+model.instructorId+"/course/"+model.courseId+"/curriculum");
-            model.chapters=courseService.findCurriculumByCourseId(model.courseId);
-            ///instructor/123/course/123/curriculum
+            courseService.addCurriculumItem(curriculum);
+            model.chapters =courseService.findCurriculumByCourseId(model.courseId);
         }
 
         function deleteCurriculumItem(chapterId){
