@@ -1,48 +1,16 @@
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-5 col-xs-2">
-                <a class="navbar-brand" href="#!/">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="hidden-sm hidden-xs">CS9999</span>
-                </a>
-            </div>
-            <div class="col-md-6 col-xs-8 navbar-brand">
-                Edit Course content
-            </div>
-            <div class="col-md-1 col-xs-1 nav-bar-plus">
-                <a href="#!/>
-                    <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'"></div>
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'"></div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
-            <ul class="list-group">
-                <li class="list-group-item boarder-none"
-                    ng-repeat="list in model.lists">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#/instructor/:instructorId/course/:courseId/general">
-                                {{list}}
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#!/general">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+        <div class="col-md-4 hidden-sm hidden-xs">
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+
+            </div>
         </div>
 
-        <div class="col-md-8 website-new-column">
+        <div class="col-md-8">
             <label for="name">Course Name</label>
             <input id="name"
                    class="form-control"
@@ -65,10 +33,10 @@
 
 
             <a class="btn btn-block btn-success"
-               ng-click="model.updateCourse(course)">update</a>
+               ng-click="model.updateCourse()">update</a>
 
             <a class="btn btn-block btn-danger"
-               ng-click="model.deleteCourse(course)">delete</a>
+               ng-click="model.deleteCourse()">delete</a>
 
 
         </div>

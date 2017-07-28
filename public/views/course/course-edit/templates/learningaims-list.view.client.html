@@ -1,47 +1,11 @@
-
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-5 col-xs-2">
-                <a class="navbar-brand" href="#">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="hidden-sm hidden-xs">CS9999</span>
-                </a>
-            </div>
-            <div class="col-md-6 col-xs-8 navbar-brand">
-                Edit Course content
-            </div>
-            <div class="col-md-1 col-xs-1 nav-bar-plus">
-                <a href="website-list.html">
-                    <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
-
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'">
+</div>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
-            <ul class="list-group">
-                <li class="list-group-item boarder-none"
-                    ng-repeat="list in model.lists">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <a href="#/instructor/:instructorId/course/:courseId/general">
-                                {{list}}
-                            </a>
-                        </div>
-                        <div class="col-xs-1">
-                            <a href="#!/general">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+            </div>
         </div>
 
 
@@ -50,115 +14,45 @@
                 Learning Aims
             </label>
             <ul class="list-group">
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input  class="form-control"
-                                    value="Make REAL web applications using cutting-edge technologies"
-                                    ng-model="model.learningAims"
-                                    type= "text">
-                            </input>
-                        </div>
-
-                        <!--<a class="btn btn-block btn-success"-->
-                           <!--ng-click="model.createNewCourse(course)">create new course</a>-->
-
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
+                <li class="list-group-item no-border"
+                    ng-repeat="LearningAim in model.course.LearningAims">
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
-                                   value="Make REAL web applications using cutting-edge technologies"
-                                   ng-model="model.learningAims"
+                                   value="Have a computer with Internet"
+                                   ng-model="course.LearningAim"
                                    type="text">
                             </input>
                         </div>
+
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
+                                  aria-hidden="true"
+                                  ng-click="model.deleteLearningAim()">
                             </span>
                         </div>
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
+                                  aria-hidden="true"
+                                  ng-click="model.updateLearningAim()">
                             </span>
                         </div>
                     </div>
-
-
                 </li>
                 <li class="list-group-item no-border">
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
                                    value="Make REAL web applications using cutting-edge technologies"
-                                   ng-model="model.learningAims"
-                                   type="text">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                   value="Make REAL web applications using cutting-edge technologies"
-                                   ng-model="model.learningAims"
-                                   type="text">
-                            </input>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                        <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
-                                  aria-hidden="true">
-                            </span>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item no-border">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <input class="form-control"
-                                   value="Make REAL web applications using cutting-edge technologies"
-                                   ng-model="learningAims"
+                                   ng-model="course.newLearningAims"
                                    placeholder="Make REAL web applications using cutting-edge technologies"
                                    type="text">
                             </input>
                         </div>
                         <div class="col-xs-1">
-                            <span class="glyphicon glyphicon-plus   btn btn-primary"
-                                  aria-hidden="true">
+                            <span class="glyphicon glyphicon-plus  center-block btn btn-primary"
+                                  aria-hidden="true"
+                                ng-click="model.addLearningAim(course)">
                             </span>
                         </div>
 

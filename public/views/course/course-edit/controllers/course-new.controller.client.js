@@ -11,13 +11,8 @@
 
         function init() {
             model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
-
-
-
         }
         init();
-
-
 
         function createNewCourse(course){
             courseService.createNewCourse(course);

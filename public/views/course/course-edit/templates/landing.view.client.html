@@ -51,8 +51,6 @@
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
         </div>
     </div>
-
-
 <div class=container-fluid id="course">
     <h2>
         Courses
@@ -63,17 +61,12 @@
                 <a href="#/instructor/{{model.instructorId}}/course/new">
                     Add new course</a>
                     <img class="img-responsive" src="../../../img/plus%202.png">
-
-
             </div>
         </div>
-
         <div class="col-xs-12 col-sm-6 col-md-3"
              ng-repeat= "course in model.courses">
             <div>
                 <a href="#/instructor/{{model.instructorId}}/course/123/general">
-
-
                     <span>{{course.courseName}}</span>
                     <img class="img-responsive"
                          ng-src={{course.courseUrl}}>

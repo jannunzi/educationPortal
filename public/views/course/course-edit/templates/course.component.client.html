@@ -1,0 +1,17 @@
+<ul class="list-group">
+    <li class="list-group-item boarder-none"
+        ng-repeat="list in model.lists">
+        <div class="row">
+            <div class="col-xs-10">
+                <a href="#/instructor/{{model.instructorId}}/course/{{model.courseId}}/general">
+                    {{list}}
+                </a>
+            </div>
+            <div class="col-xs-1">
+                <a href="#/instructor/{{model.instructorId}}/course/{{model.courseId}}/general">
+                    <span class="glyphicon glyphicon-cog pull-right"></span>
+                </a>
+            </div>
+        </div>
+    </li>
+</ul>
