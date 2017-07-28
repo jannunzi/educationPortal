@@ -64,7 +64,12 @@
             "getRequirementsByCourseId": getRequirementsByCourseId,
             "addRequirement": addRequirement,
             "updateRequirement": updateRequirement,
-            "deleteRequirement": deleteRequirement
+            "deleteRequirement": deleteRequirement,
+            "getlearningAimsByCourseId" : getlearningAimsByCourseId,
+            "deleteLearningAim" : deleteLearningAim,
+            "updateLearningAim" :updateLearningAim,
+            "addLearningAim" :addLearningAim,
+            "getAllCourses" :getAllCourses
         };
 
         return api;
@@ -75,6 +80,14 @@
 
         function getSideList() {
 
+        }
+
+        /**
+         * Functions for landing page
+         */
+
+        function getAllCourses(){
+            return courses;
         }
 
 
@@ -176,40 +189,50 @@
 
 
 
-        function getrequirements(){
-            return courses;
+        //Get learning Aim by course id
+        function getlearningAimsByCourseId(courseId){
+            var result=[];
+            for(var i in learningAims ){
+                var learningAim=learningAims[i];
+                if (learningAim.courseId === courseId) {
+                    result.push(learningAim);
+                }
+            }
+             return result;
         }
 
-        function getAllCourses(){
-            return courses;
+        //add Learning Aim
+        function addLearningAim(courseId, learningAim){
+            if (!learningAim.detail) {
+                return;
+            }
+            var newLearningAim = {};
+            newLearningAim._id =  (new Date()).getTime()+"";
+            newLearningAim.courseId = courseId;
+            newLearningAim.detail = learningAim.detail;
+            learningAims.push(newLearningAim)
         }
 
-        function getlearningAims(){
-            return courses;
+        //update Learning Aims
+        function updateLearningAim(newLearningaim) {
+            for (var i in learningAims) {
+                var learningaim = learningAims[i];
+                if (learningaim._id === newLearningaim._id) {
+                    learningAims[i] = newLearningaim;
+                    break;
+                }
+            }
         }
 
-
-
-
-
-
-
-
-        // function deleteRequirement(courseId){
-        //
-        //
-        // }
-        function addLearningAim(course){
-
+        //Delete LearningAim
+        function deleteLearningAim(learningaimId) {
+            var learningaim = learningAims.find(function (learningaim) {
+                return learningaim._id = learningaimId;
+            });
+            var index = learningAims.indexOf(learningaim);
+            if (index >= 0) {
+                learningAims.splice(index, 1);
+            }
         }
-
-        function updateLearningAim() {
-
-        }
-
-        function deleteLearningAim() {
-
-        }
-
     }
 })();

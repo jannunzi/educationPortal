@@ -15,12 +15,12 @@
             </label>
             <ul class="list-group">
                 <li class="list-group-item no-border"
-                    ng-repeat="LearningAim in model.course.LearningAims">
+                    ng-repeat="learningaim in model.learningaims">
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
                                    value="Have a computer with Internet"
-                                   ng-model="course.LearningAim"
+                                   ng-model="learningaim.detail"
                                    type="text">
                             </input>
                         </div>
@@ -28,13 +28,13 @@
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
                                   aria-hidden="true"
-                                  ng-click="model.deleteLearningAim()">
+                                  ng-click="model.deleteLearningAim(learningaim)">
                             </span>
                         </div>
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-ok pull-right btn btn-success"
                                   aria-hidden="true"
-                                  ng-click="model.updateLearningAim()">
+                                  ng-click="model.updateLearningAim(learningaim)">
                             </span>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="col-xs-10">
                             <input class="form-control"
                                    value="Make REAL web applications using cutting-edge technologies"
-                                   ng-model="course.newLearningAims"
+                                   ng-model="model.newLearningaim.detail"
                                    placeholder="Make REAL web applications using cutting-edge technologies"
                                    type="text">
                             </input>
@@ -52,7 +52,7 @@
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-plus  center-block btn btn-primary"
                                   aria-hidden="true"
-                                ng-click="model.addLearningAim(course)">
+                                  ng-click="model.addLearningAim(model.newLearningaim)">
                             </span>
                         </div>
 

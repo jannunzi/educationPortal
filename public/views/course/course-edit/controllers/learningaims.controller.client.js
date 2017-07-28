@@ -4,39 +4,39 @@
     angular.module('EducationPortal')
         .controller('learningAimsController',learningAimsController);
 
-    function learningAimsController($routeParams, $location,courseService){
+    function learningAimsController($routeParams, courseService) {
         var model = this;
-        model.instructorId=$routeParams.instructorId;
-        model.learningAimId= $routeParams.learningAimId;
+        model.courseId = $routeParams.courseId;
+        model.instructorId = $routeParams.instructorId;
+        model.learningAimId = $routeParams.learningAimId;
         model.deleteLearningAim = deleteLearningAim;
         model.updateLearningAim = updateLearningAim;
         model.addLearningAim = addLearningAim;
 
         function init() {
-            model.lists =["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
-            model.learningAims = courseService.getlearningAims();
+            model.lists = ["general", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
+            model.learningaims = courseService.getlearningAimsByCourseId(model.courseId);
 
         }
+
         init();
 
-        function deleteLearningAim(){
-            courseService.deleteLearningAim(model.learningAimId);
-            var url = "/instructor/" + model.instructorId + "/course/" +model.courseId +"/learningaims/";
-            $location.url(url);
+        function addLearningAim(learningaim) {
+            courseService.addLearningAim(model.courseId, learningaim);
+            model.newLearningaim = {};
+            model.learningaims = courseService.getlearningAimsByCourseId(model.courseId);
         }
 
-        function addLearningAim(){
-            courseService.addLearningAim(course);
-            var url = "/instructor/" + model.instructorId + "/course/" +model.courseId +"/learningaims/";
-            $location.url(url);
+
+        function updateLearningAim(learningaim) {
+            courseService.updateLearningAim(learningaim);
+            model.learningaims = courseService.getlearningAimsByCourseId(model.courseId);
         }
 
-        function updateLearningAim(){
-            courseService.updateLearningAim(course,model.learningAimId);
-            var url = "/instructor/" + model.instructorId + "/course/" +model.courseId +"/learningaims/";
-            $location.url(url);
+        function deleteLearningAim(learningaim) {
+            courseService.deleteLearningAim(learningaim);
+            model.learningaims = courseService.getlearningAimsByCourseId(model.courseId);
         }
-
     }
 })();
 
