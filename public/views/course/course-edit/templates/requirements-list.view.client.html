@@ -14,12 +14,12 @@
             </label>
             <ul class="list-group">
                 <li class="list-group-item no-border"
-                    ng-repeat="requirement in model.course.requirements">
+                    ng-repeat="requirement in model.requirements">
                     <div class="row">
                         <div class="col-xs-10">
                             <input class="form-control"
                                    value="Have a computer with Internet"
-                                   ng-model="requirement"
+                                   ng-model="requirement.detail"
                                    type="text">
                             </input>
                         </div>
@@ -27,13 +27,13 @@
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
                                   aria-hidden="true"
-                                  ng-click="model.deleteRequirement()">
+                                  ng-click="model.deleteRequirement(requirement)">
                             </span>
                         </div>
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-ok pull-right btn btn-success"
                                   aria-hidden="true"
-                                  ng-click="model.updateRequirement()">
+                                  ng-click="model.updateRequirement(requirement)">
                             </span>
                         </div>
                     </div>
@@ -44,14 +44,14 @@
                         <div class="col-xs-10">
                             <input class="form-control"
                                    type="text"
-                                   ng-model="course.newRequirement"
+                                   ng-model="model.newRequirement.detail"
                                    placeholder="Please add new course requirement">
                             </input>
                         </div>
                         <div class="col-xs-1">
                             <span class="glyphicon glyphicon-plus center-block btn btn-primary"
                                   aria-hidden="true"
-                                  ng-click="model.addRequirement()">
+                                  ng-click="model.addRequirement(model.newRequirement)">
                             </span>
                         </div>
                     </div>

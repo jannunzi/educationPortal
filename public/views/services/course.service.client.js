@@ -57,22 +57,26 @@
 
 
         var api = {
-            "getAllCourses": getAllCourses,
+            "createNewCourse": createNewCourse,
+            "findCourseByCourseId": findCourseByCourseId,
             "updateCourse": updateCourse,
             "deleteCourse": deleteCourse,
-            "createNewCourse":createNewCourse,
-            "getlearningAims" :getlearningAims,
-            "getrequirements" :getrequirements,
-            "findCourseByCourseId": findCourseByCourseId,
-            // "createRequirement": createRequirement,
-            // "deleteRequirement" :deleteRequirement,
-            // "addRequirement" :addRequirement,
-            "updateLearningAim" : updateLearningAim,
-            "deleteLearningAim" : deleteLearningAim,
-            "addLearningAim" :addLearningAim
+            "getRequirementsByCourseId": getRequirementsByCourseId,
+            "addRequirement": addRequirement,
+            "updateRequirement": updateRequirement,
+            "deleteRequirement": deleteRequirement
         };
 
         return api;
+
+        /**
+         * Functions for all course page
+         */
+
+        function getSideList() {
+
+        }
+
 
         /**
          * Functions for course general page
@@ -123,6 +127,55 @@
             }
         }
 
+        /**
+         * Functions for course requirement
+         */
+
+        //Get requirements by course id
+        function getRequirementsByCourseId(courseId) {
+            var result = [];
+            for(var i in requirements) {
+                var requirement = requirements[i];
+                if (requirement.courseId === courseId) {
+                    result.push(requirement);
+                }
+            }
+            return result;
+        }
+
+        //Add new requirement
+        function addRequirement(courseId, requirement){
+            var newRequirement = {};
+            newRequirement._id =  (new Date()).getTime()+"";
+            newRequirement.courseId = courseId;
+            newRequirement.detail = requirement.detail;
+            requirements.push(newRequirement);
+        }
+
+        //Update requirement
+        function updateRequirement(newRequirement) {
+            for (var i in requirements) {
+                var requirement = requirements[i];
+                if (requirement._id = newRequirement._id) {
+                    requirements[i] = newRequirement;
+                    break;
+                }
+            }
+        }
+
+        //Delete requirement
+        function deleteRequirement(requirementId) {
+            var requirement = requirements.find(function (requirement) {
+               return requirement._id = requirementId;
+            });
+            var index = requirements.indexOf(requirement);
+            if (index >= 0) {
+                requirements.splice(index, 1);
+            }
+        }
+
+
+
         function getrequirements(){
             return courses;
         }
@@ -137,19 +190,9 @@
 
 
 
-        // function createRequirement(course){
-        //     newRequirements={};
-        //     newRequirements._id = (new Date()).getTime()+"";
-        //     newRequirements=course.requirements;
-        //     courses.push(newRequirements);
-        // }
 
-        // function addRequirement(course){
-        //     newRequirements={};
-        //     newRequirements=course.requirements;
-        //     courses.push(newRequirements);
-        //
-        // }
+
+
 
 
         // function deleteRequirement(courseId){
@@ -167,23 +210,6 @@
         function deleteLearningAim() {
 
         }
-
-
-
-
-
-
-
-        function findCourseByInstructorId(instructorId) {
-            var results=[];
-            for( var c in courses){
-                if(courses[c].instructorId===instructorId){
-                    results.push(courses[c]);
-                }
-            }
-            return results;
-        }
-
 
     }
 })();

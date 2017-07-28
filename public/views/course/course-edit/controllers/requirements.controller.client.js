@@ -2,12 +2,13 @@
     angular.module('EducationPortal')
         .controller('requirementsController',requirementsController);
 
-    function requirementsController($routeParams,courseService){
+    function requirementsController($routeParams, $location, courseService){
         var model = this;
         model.courseId = $routeParams.courseId;
         model.instructorId=$routeParams.instructorId;
-        // model.addRequirement = addRequirement;
-        // model.deleteRequirement = deleteRequirement;
+        model.addRequirement = addRequirement;
+        model.updateRequirement = updateRequirement;
+        model.deleteRequirement = deleteRequirement;
 
         function init() {
             model.lists = [
@@ -18,22 +19,25 @@
                 "Instructor",
                 "Reviews"
             ];
-
-
+            model.requirements =courseService.getRequirementsByCourseId(model.courseId);
         }
         init();
 
+        function addRequirement(requirement){
+            courseService.addRequirement(model.courseId, requirement);
+            model.newRequirement = {};
+            model.requirements = courseService.getRequirementsByCourseId(model.courseId);
+        }
 
-        //
-        // function addRequirement(course){
-        //     courseService.addRequirement(course);
-        // }
-        //
-        // function deleteRequirement(courseId){
-        //     courseService.deleteRequirement(courseId);
-        //
-        //
-        // }
+        function updateRequirement(requirement) {
+            courseService.updateRequirement(requirement);
+            model.requirements = courseService.getRequirementsByCourseId(model.courseId);
+        }
+
+        function deleteRequirement(requirement){
+            courseService.deleteRequirement(requirement._id);
+            model.requirements = courseService.getRequirementsByCourseId(model.courseId);
+        }
     }
 })();
 
