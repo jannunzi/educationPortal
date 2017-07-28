@@ -11,7 +11,7 @@
                 Edit Course content
             </div>
             <div class="col-md-1 col-xs-1 nav-bar-plus">
-                <a href="website-list.html">
+                <a href="#!/home">
                     <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
 
                 </a>
@@ -28,12 +28,12 @@
                     ng-repeat="list in model.lists">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list}}">
-                                {{list}}
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
+                                {{list.title}}
                             </a>
                         </div>
                         <div class="col-xs-1">
-                            <a href="../general.html">
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -51,11 +51,12 @@
             <input id="chapter"
                    ng-model="curriculum.chapter"
                    class="form-control"
-                   value="Chapter 1"/>
+                   placeholder="Chapter 1"/>
             <label for="description">Description </label>
             <textarea id="description"
                       class="form-control"
                       ng-model="curriculum.description"
+                      placeholder="Description"
                       rows="6">Description</textarea>
             <a class="btn btn-block btn-success"
                 ng-click="model.addCurriculumItem(curriculum)">Add</a>
@@ -63,12 +64,18 @@
 
             <ul class="list-group">
                 <li ng-repeat="chapter in model.chapters"
-                    class="list-group-item no-border">
+                    class="list-group-item">
                     <div class="row">
                         <div class="col-xs-11">
                             <h4>{{chapter.chapter}}</h4>
                             <div>{{chapter.description}}</div>
                         </div>
+                        <!--<div class="col-xs-1">-->
+                            <!--<a class="btn btn-block btn-default"-->
+                               <!--ng-click="model.updateCurriculumItem(chapter._id, curriculum)">-->
+                                <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                            <!--</a>-->
+                        <!--</div>-->
                         <div class="col-xs-1">
                             <a class="btn btn-block btn-danger"
                                ng-click="model.deleteCurriculumItem(chapter._id)">

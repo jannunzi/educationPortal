@@ -9,8 +9,14 @@
         .factory('courseService', courseService);
 
     function courseService() {
-        var lists =["General", "Learning Aims", "Requirements", "Curriculum", "Instructor", "Reviews"];
-        var curriculum=
+        var lists =[{title:"General", link:'general'},
+            {title:"Learning Aims", link:'learningaims'},
+            {title:"Requirements", link:'requirements'},
+            {title:"Curriculum", link:"curriculum"},
+            {title:"Instructor", link:"instructor"},
+            {title:"Reviews", link:'reviews'}];
+
+        var curriculum =
             [
                 {courseId: "123", _id:"1231", chapter:"Alice", description:"Wonderland"  },
                 {courseId: "123", _id:"1232", chapter:"Bob", description:"Wonderland"  },
@@ -42,12 +48,23 @@
             findInstructorById:findInstructorById,
             updateInstructorInfo: updateInstructorInfo,
             addReviews: addReviews,
-            getList:getList
-        };
+            getList:getList,
+            findCurriculumById: findCurriculumById
+    };
 
         return api;
         function getList() {
             return lists;
+        }
+
+        function findCurriculumById(_id) {
+            var result=[];
+            for(var c in curriculum){
+                if(curriculum[c]._id==_id){
+                    result.push(curriculum[c]);
+                }
+            }
+            return result;
         }
         function addReviews(_review) {
             _review._id = (new Date()).getTime()+"";
@@ -91,13 +108,12 @@
             return results;
         }
         function fincChapterById(chapterId) {
-            var results=[];
             for( var c in curriculum){
                 if(curriculum[c]._id===chapterId){
-                    results.push(curriculum[c]);
+                    return curriculum[c];
                 }
             }
-            return results;
+            return 0;
         }
 
         function addCurriculumItem(_curriculum) {

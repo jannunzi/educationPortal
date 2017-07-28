@@ -27,4 +27,4 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT || 3000);

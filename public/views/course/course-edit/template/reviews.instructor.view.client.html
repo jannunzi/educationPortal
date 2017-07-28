@@ -28,12 +28,12 @@
                     ng-repeat="list in model.lists">
                     <div class="row">
                         <div class="col-xs-10">
-                            <a href="../general.html">
-                                {{list}}
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
+                                {{list.title}}
                             </a>
                         </div>
                         <div class="col-xs-1">
-                            <a href="../general.html">
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>

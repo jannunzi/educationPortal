@@ -11,6 +11,7 @@
         model.instructorId = $routeParams.instructorId;
         model.addCurriculumItem =addCurriculumItem;
         model.deleteCurriculumItem = deleteCurriculumItem;
+        model.updateCurriculumItem = updateCurriculumItem;
         model.chapters =courseService.findCurriculumByCourseId(model.courseId);
         model.lists =courseService.getList();
         function init() {
@@ -19,10 +20,28 @@
         }
         init();
 
+        function updateCurriculumItem(chapterId, curriculum) {
+            var result = courseService.findCurriculumById(chapterId);
+            curriculum.chapter = result[0].chapter;
+            curriculum.description = result[0].description;
+            var index = model.chapters.indexOf(result);
+            model.chapters.splice(index, 0, curriculum);
+        }
+
+        // function updatePage(pageId, page) {
+        //     var foundPage = findPageById(pageId);
+        //     var index = pages.indexOf(foundPage);
+        //     pages.splice(index,0, page);
+        //     return pages;
+        //
+        // }
+
         function addCurriculumItem(curriculum) {
             curriculum.courseId = model.courseId;
-            courseService.addCurriculumItem(curriculum);
-            model.chapters =courseService.findCurriculumByCourseId(model.courseId);
+            var curriculumNew = courseService.addCurriculumItem(curriculum);
+            $location.url("/instructor/"+model.instructorId+"/course/"+model.courseId+"/curriculum");
+            model.chapters=courseService.findCurriculumByCourseId(model.courseId);
+            ///instructor/123/course/123/curriculum
         }
 
         function deleteCurriculumItem(chapterId){
