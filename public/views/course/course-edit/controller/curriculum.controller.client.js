@@ -15,17 +15,15 @@
         model.chapters =courseService.findCurriculumByCourseId(model.courseId);
         model.lists =courseService.getList();
         function init() {
-
-
+            model.curriculum={chapter:"", description:"", courseId:"", _id:""};
         }
         init();
 
-        function updateCurriculumItem(chapterId, curriculum) {
+        function updateCurriculumItem(chapterId) {
             var result = courseService.findCurriculumById(chapterId);
-            curriculum.chapter = result[0].chapter;
-            curriculum.description = result[0].description;
-            var index = model.chapters.indexOf(result);
-            model.chapters.splice(index, 0, curriculum);
+            model.curriculum = result[0];
+            var index = model.chapters.indexOf(result[0]);
+            model.chapters.splice(index, 1, model.curriculum);
         }
 
         // function updatePage(pageId, page) {
@@ -36,10 +34,14 @@
         //
         // }
 
-        function addCurriculumItem(curriculum) {
+        function addCurriculumItem(_curriculum) {
+            var curriculum={chapter:"", description:"", courseId:"", _id:""};
+            curriculum.chapter = _curriculum.chapter;
+            curriculum.description = _curriculum.description;
             curriculum.courseId = model.courseId;
             courseService.addCurriculumItem(curriculum);
             model.chapters =courseService.findCurriculumByCourseId(model.courseId);
+
         }
 
         function deleteCurriculumItem(chapterId){
