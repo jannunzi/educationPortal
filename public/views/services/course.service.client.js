@@ -60,7 +60,7 @@
         function findCurriculumById(_id) {
             var result=[];
             for(var c in curriculum){
-                if(curriculum[c]._id==_id){
+                if(curriculum[c]._id ==_id){
                     result.push(curriculum[c]);
                 }
             }

@@ -58,6 +58,8 @@
                       ng-model="model.curriculum.description"
                       placeholder="Description"
                       rows="6">Description</textarea>
+            <a class="btn btn-block btn-danger"
+               ng-click="model.saveCurriculumItem(model.curriculum)">Save</a>
             <a class="btn btn-block btn-success"
                 ng-click="model.addCurriculumItem(model.curriculum)">Add</a>
             <hr/>

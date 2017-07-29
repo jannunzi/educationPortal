@@ -7,6 +7,7 @@
 
     function courseController($routeParams, $location, courseService) {
         var model = this;
+        model.saveflag = false;
         model.courseId = $routeParams.courseId;
         model.instructorId = $routeParams.instructorId;
         model.addCurriculumItem =addCurriculumItem;
@@ -14,16 +15,21 @@
         model.updateCurriculumItem = updateCurriculumItem;
         model.chapters =courseService.findCurriculumByCourseId(model.courseId);
         model.lists =courseService.getList();
+        model.saveCurriculumItem =saveCurriculumItem;
         function init() {
             model.curriculum={chapter:"", description:"", courseId:"", _id:""};
         }
         init();
-
+        function saveCurriculumItem(_curriculum) {
+            model.saveflag = true;
+        }
         function updateCurriculumItem(chapterId) {
             var result = courseService.findCurriculumById(chapterId);
             model.curriculum = result[0];
-            var index = model.chapters.indexOf(result[0]);
-            model.chapters.splice(index, 1, model.curriculum);
+            if(model.saveflag){
+                var index = model.chapters.indexOf(result[0]);
+                model.chapters.splice(index, 1, model.curriculum);
+            }
         }
 
         // function updatePage(pageId, page) {
