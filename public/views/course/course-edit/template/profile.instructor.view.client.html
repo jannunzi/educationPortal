@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-xs-2">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="hidden-sm hidden-xs">CS9999</span>
+                </a>
+            </div>
+            <div class="col-md-6 col-xs-8 navbar-brand">
+                Edit Course content
+            </div>
+            <div class="col-md-1 col-xs-1 nav-bar-plus">
+                <a href="website-list.html">
+                    <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
+            <ul class="list-group">
+                <li class="list-group-item boarder-none"
+                    ng-repeat="list in model.lists">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
+                                {{list.title}}
+                            </a>
+                        </div>
+                        <div class="col-xs-1">
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
+                                <span class="glyphicon glyphicon-cog pull-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="col-md-8 ">
+            <div class="col-xs-12 visible-xs">
+                <h3 class="yw-pageTitle">Instrutor</h3>
+            </div>
+            <label for="name">Name </label>
+            <input id="name"
+                   ng-model="instructor.instructorName"
+                   class="form-control"
+                   placeholder="Alice"/>
+            <label for="profile">Profile </label>
+            <textarea id="profile"
+                      ng-model="instructor.instructorDescription"
+                      class="form-control"
+                      rows="6"
+                      placeholder="Your description"></textarea>
+            <a ng-click="model.updateInstructorInfo(instructor)" class="btn btn-block btn-success">Save</a>
+            <div ng-show="model.success" class="alert alert-success" role="alert">{{model.success}}</div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
