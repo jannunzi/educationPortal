@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    div.ex1 {
+        padding: 55px 5px 5px 5px;
+    }
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+</head>
+
+<body ng-controller="SectionController">
+
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="menubar">
+            <div class="col-xs-7 col-sm-4 col-lg-2">
+                <div class="navbar-header">
+                    <a class="navbar-brand " href="#"><b>Education Portal</b></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="ex1 container-fluid">
+    <div class="row">
+         <div class="col-md-12 website-new-column website-new-border">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-condensed table-hover">
+                    <tr>
+                        <th bgcolor="gray">
+                            Section Name
+                        </th>
+                        <th bgcolor="gray">
+                            Venue
+                        </th>
+                        <th bgcolor="gray">
+                            Days
+                        </th>
+                        <th bgcolor="gray">
+                            Instructor
+                        </th>
+                        <th bgcolor="gray">
+                            Enrolled students
+                        </th>
+                        <th bgcolor="gray">
+                            Action
+                        </th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" ng-model="model.sectionName"></td>
+                        <td><input type="text" ng-model="model.sectionVenue"></td>
+                        <td><input type="text" ng-model="model.sectionDays"></td>
+                        <td><input type="text" ng-model="model.sectionInstructor"></td>
+                        <td><input type="text" ng-model="model.sectionStudents"></td>
+                        <td>
+                            <button type = "button" class="btn btn-primary">Add
+                            </button>
+                            <button type = "button" class="btn btn-success">Update
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Section 1</td>
+                        <td>Behrakis</td>
+                        <td>Mondays, Tuesdays</td>
+                        <td>Prof. ABC</td>
+                        <td>Alex, Ben, Dan, Elvis</td>
+
+                        <td class="text-nowrap">
+
+                            <button type = "button" class="btn btn-danger">Delete
+                            </button>
+                            <button type = "button" class="btn btn-success">Select
+                            </button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Section 1</td>
+                        <td>International Village</td>
+                        <td>Wednesdays, Thursdays</td>
+                        <td>Prof. PQR</td>
+                        <td>John, Justin, Dan, Ryan</td>
+
+                        <td class="text-nowrap">
+
+                            <button type = "button" class="btn btn-danger">Delete
+                            </button>
+                            <button type = "button" class="btn btn-success">Select
+                            </button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Section 2</td>
+                        <td>Shillman</td>
+                        <td>Tuesdays, Wednesdays</td>
+                        <td>Prof. EFG</td>
+                        <td>Adam, Ben, Brad, Matthew</td>
+
+                        <td class="text-nowrap">
+
+                            <button type = "button" class="btn btn-danger">Delete
+                            </button>
+                            <button ng-click ="model.select("Section1")" type = "button" class="btn btn-success">Select
+                            </button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Section 3</td>
+                        <td>WVH</td>
+                        <td>Mondays, Fridays</td>
+                        <td>Prof. XYZ</td>
+                        <td>Ben, John, Justin</td>
+
+                        <td class="text-nowrap">
+
+                            <button type = "button" class="btn btn-danger">Delete
+                            </button>
+                            <button type = "button" class="btn btn-success">Select
+                            </button>
+
+                        </td>
+                    </tr>
+                </table>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

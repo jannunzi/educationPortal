@@ -9049,7 +9049,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         var attrStart = directive.$$start;
         var attrEnd = directive.$$end;
 
-        // collect multiblock sections
+        // collect multiblock section
         if (attrStart) {
           $compileNode = groupScan(compileNode, attrStart, attrEnd);
         }
@@ -11855,7 +11855,7 @@ function $HttpProvider() {
          * Runtime equivalent of the `$httpProvider.defaults` property. Allows configuration of
          * default headers, withCredentials as well as request and response transformations.
          *
-         * See "Setting HTTP Headers" and "Transforming Requests and Responses" sections above.
+         * See "Setting HTTP Headers" and "Transforming Requests and Responses" section above.
          */
     $http.defaults = defaults;
 
