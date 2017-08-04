@@ -50,12 +50,33 @@
                 templateUrl: "views/course/course-edit/templates/requirements-list.view.client.html",
                 controller:"requirementsController",
                 controllerAs:"model"
+             })
+          
+            .when("/instructor/:instructorId/course/:courseId/curriculum", {
+                templateUrl: "views/course/course-edit/template/curriculum.instructor.view.client.html",
+                controller:"courseController",
+                controllerAs:"model"
             })
+            .when("/instructor/:instructorId/course/:courseId/profile", {
+                templateUrl: "views/course/course-edit/template/profile.instructor.view.client.html",
+                controller:"instructorController",
+                controllerAs:"model"
+            })
+            .when("/instructor/:instructorId/course/:courseId/reviews", {
+                templateUrl: "views/course/course-edit/template/reviews.instructor.view.client.html",
+                controller:"reviewsController",
+                controllerAs:"model"
+            })
+
             .when("/instructor/:instructorId/course/new", {
                 templateUrl: "views/course/course-edit/templates/course-new.view.client.html",
                 controller:"createNewCourseController",
                 controllerAs:"model"
-            });
+            })
+      
+            .otherwise({
+                redirectTo: "/home"
+            })
 
     }
 })();

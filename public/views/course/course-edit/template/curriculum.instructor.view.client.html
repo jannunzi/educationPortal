@@ -1,0 +1,100 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-xs-2">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="hidden-sm hidden-xs">CS9999</span>
+                </a>
+            </div>
+            <div class="col-md-6 col-xs-8 navbar-brand">
+                Edit Course content
+            </div>
+            <div class="col-md-1 col-xs-1 nav-bar-plus">
+                <a href="#!/home">
+                    <span class="glyphicon glyphicon-ok pull-right span-plus" aria-hidden="true"></span>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
+            <ul class="list-group">
+                <li class="list-group-item boarder-none"
+                    ng-repeat="list in model.lists">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
+                                {{list.title}}
+                            </a>
+                        </div>
+                        <div class="col-xs-1">
+                            <a href="#!/instructor/{{model.instructorId}}/course/{{model.courseId}}/{{list.link}}">
+                                <span class="glyphicon glyphicon-cog pull-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="col-md-8 ">
+            <div class="col-xs-12 visible-xs">
+                <h3 class="yw-pageTitle">Curriculum</h3>
+            </div>
+            <label for="chapter">Chapter </label>
+            <input id="chapter"
+                   ng-model="model.curriculum.chapter"
+                   class="form-control"
+                   placeholder="Chapter 1"/>
+            <label for="description">Description </label>
+            <textarea id="description"
+                      class="form-control"
+                      ng-model="model.curriculum.description"
+                      placeholder="Description"
+                      rows="6">Description</textarea>
+            <a class="btn btn-block btn-danger"
+               ng-click="model.saveCurriculumItem(model.curriculum)">Save</a>
+            <a class="btn btn-block btn-success"
+                ng-click="model.addCurriculumItem(model.curriculum)">Add</a>
+            <hr/>
+
+            <ul class="list-group">
+                <li ng-repeat="chapter in model.chapters"
+                    class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <h4>{{chapter.chapter}}</h4>
+                            <div>{{chapter.description}}</div>
+                        </div>
+                        <div class="col-xs-1">
+                            <a class="btn btn-block btn-default"
+                               ng-click="model.updateCurriculumItem(chapter._id)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                        </div>
+                        <div class="col-xs-1">
+                            <a class="btn btn-block btn-danger"
+                               ng-click="model.deleteCurriculumItem(chapter._id)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
