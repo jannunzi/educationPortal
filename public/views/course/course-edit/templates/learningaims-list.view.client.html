@@ -1,0 +1,74 @@
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+            </div>
+        </div>
+
+
+        <div class="col-md-8 ">
+            <label for="LearningAims1">
+                Learning Aims
+            </label>
+            <ul class="list-group">
+                <li class="list-group-item no-border"
+                    ng-repeat="learningaim in model.learningaims">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input class="form-control"
+                                   value="Have a computer with Internet"
+                                   ng-model="learningaim.detail"
+                                   type="text">
+                            </input>
+                        </div>
+
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
+                                  aria-hidden="true"
+                                  ng-click="model.deleteLearningAim(learningaim)">
+                            </span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
+                                  aria-hidden="true"
+                                  ng-click="model.updateLearningAim(learningaim)">
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item no-border">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input class="form-control"
+                                   value="Make REAL web applications using cutting-edge technologies"
+                                   ng-model="model.newLearningaim.detail"
+                                   placeholder="Make REAL web applications using cutting-edge technologies"
+                                   type="text">
+                            </input>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-plus  center-block btn btn-primary"
+                                  aria-hidden="true"
+                                  ng-click="model.addLearningAim(model.newLearningaim)">
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                </li>
+            </ul>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
