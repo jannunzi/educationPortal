@@ -31,6 +31,15 @@
             // .otherwise({
             //     redirectTo: "/home"
             // })
+            .when("/course", {
+                template:"<h1>List of Courses</h1> <a href='#/course/123'>Some Course</a>. <a href='#/course/new'>Add New Course</a>. <a href='#/course'>All Courses</a>. <a href='#/course'>My Courses</a>"
+            })
+            .when("/course/new", {
+                template:"<h1>Create new course</h1> <a href='#/course'>Save</a>"
+            })
+            .when("/course/:courseId", {
+                template:"<h1>Edit Course</h1> <a href='#/course'>Save</a>. <a href='#/course'>Delete</a>"
+            })
             .when('/instructor/:instructorId/course/course-landing', {
                 templateUrl: "views/course/course-edit/templates/landing.view.client.html",
                 controller:"landingController",
