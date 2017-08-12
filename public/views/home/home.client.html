@@ -44,74 +44,94 @@
 </header>
 
 
-<div class="courses">
+
+
+
+
+
+<!-- <div name="test" class="container" >
     <div class="container-fluid">
         <h3>Courses</h3>
     </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+        <div class="list-courses">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <a href="#/instructor/{{model.instructorId}}/course/new">
+                        Add new course</a>
+                    <img class="img-responsive" src="../../../img/plus%202.png">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3"
+                 ng-repeat= "course in model.courses">
+                <div>
+                    <a href="#/courseDetails/{{model.courseId}}">
+                        <span>{{course.courseName}}</span>
+                        <img class="img-responsive"
+                             ng-src={{course.courseUrl}}>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    <!--<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
         <div class="panel panel-info">
             <div class="panel-body">
                 <img class="img-responsive" src="http://radiozdk.com/main/wp-content/uploads/2016/09/COMP.jpg">
-                <h4 class="course">Web Development 5610</h4>
-                <h5 class="author">Author name</h5>
-                <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-        <div class="panel panel-info">
-            <div class="panel-body">
-                <img class="img-responsive" src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
-                <h4 class="course">Databases</h4>
-                <h5 class="author">Author name</h5>
-                <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-        <div class="panel panel-info">
-            <div class="panel-body">
-                <img class="img-responsive" src="https://www.seokarachi.com/wp-content/uploads/2017/05/Computer-Short-Courses-Pakistan.jpg">
-                <h4 class="course">Web Development 4550</h4>
-                <h5 class="author">Author name</h5>
-                <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-        <div class="panel panel-info">
-            <div class="panel-body">
-                <img class="img-responsive" src="http://cdn.yourarticlelibrary.com/wp-content/uploads/2013/12/b846.jpg">
-                <h4 class="course">Algorithms</h4>
-                <h5 class="author">Author name</h5>
-                <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-        <div class="panel panel-info">
-            <div class="panel-body">
-                <img class="img-responsive" src="https://www.seokarachi.com/wp-content/uploads/2017/05/Computer-Short-Courses-Pakistan.jpg">
-                <h4 class="course">Information Retrieval</h4>
-                <h5 class="author">Author name</h5>
-                <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
-        <div class="panel panel-info">
-            <div class="panel-body">
-                <img class="img-responsive" src="http://cdn.yourarticlelibrary.com/wp-content/uploads/2013/12/b846.jpg">
-                <h4 class="course">Map Reduce</h4>
-                <h5 class="author">Author name</h5>
-                <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
-    </div>
+                <h4> <a href="#/courseDetails/123"> Web Development 5610  </a></h4>
+               <!-- <h4 class="course">Web Development 5610 </h4>  -->
+<!--   <h5 class="author">Author name</h5>
 </div>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+<div class="panel panel-info">
+<div class="panel-body">
+   <img class="img-responsive" src="http://www.softprocomp.com/ding/wp-content/uploads/2015/07/computer-training-courses.png">
+   <h4 class="course">Databases</h4>
+   <h5 class="author">Author name</h5>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+<div class="panel panel-info">
+<div class="panel-body">
+   <img class="img-responsive" src="https://www.seokarachi.com/wp-content/uploads/2017/05/Computer-Short-Courses-Pakistan.jpg">
+   <h4 class="course">Web Development 4550</h4>
+   <h5 class="author">Author name</h5>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+<div class="panel panel-info">
+<div class="panel-body">
+   <img class="img-responsive" src="http://cdn.yourarticlelibrary.com/wp-content/uploads/2013/12/b846.jpg">
+   <h4 class="course">Algorithms</h4>
+   <h5 class="author">Author name</h5>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+<div class="panel panel-info">
+<div class="panel-body">
+   <img class="img-responsive" src="https://www.seokarachi.com/wp-content/uploads/2017/05/Computer-Short-Courses-Pakistan.jpg">
+   <h4 class="course">Information Retrieval</h4>
+   <h5 class="author">Author name</h5>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+<div class="panel panel-info">
+<div class="panel-body">
+   <img class="img-responsive" src="http://cdn.yourarticlelibrary.com/wp-content/uploads/2013/12/b846.jpg">
+   <h4 class="course">Map Reduce</h4>
+   <h5 class="author">Author name</h5>
+</div>
+</div>
+</div>  -->

@@ -32,13 +32,11 @@ module.exports = function (app, userModel) {
     }
 
     function login(req, res) {
-        console.log("Hello");
         var userName = req.body;
         userModel
             .findUserByCredentials(userName)
             .then(function (user)
                 {
-                    console.log("Success service");
                     res.json(user);
                         },
                         function (err) {

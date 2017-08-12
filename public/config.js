@@ -28,17 +28,29 @@
                 controllerAs:"model"
             })
 
-            // .otherwise({
-            //     redirectTo: "/home"
-            // })
             .when("/course", {
-                template:"<h1>List of Courses</h1> <a href='#/course/123'>Some Course</a>. <a href='#/course/new'>Add New Course</a>. <a href='#/course'>All Courses</a>. <a href='#/course'>My Courses</a>"
+                templateUrl:"views/course/template/course_all.view.html",
+                controller:"CourseAllController",
+                controllerAs:"model"
             })
             .when("/course/new", {
-                template:"<h1>Create new course</h1> <a href='#/course'>Save</a>"
+                //templateUrl: "views/course/course-edit/templates/course-new.view.client.html",
+                templateUrl: "views/course/template/course_add.view.html",
+                controller:"createNewCourseController",
+                controllerAs:"model"
             })
-            .when("/course/:courseId", {
-                template:"<h1>Edit Course</h1> <a href='#/course'>Save</a>. <a href='#/course'>Delete</a>"
+
+            .when("/courseDetails/:courseId",{
+            templateUrl:"views/course/template/course.view.html",
+                controller:"CourseEditController",
+                controllerAs:"model"
+        })
+
+            .when("/course/edit/:courseId", {
+                //template:"<h1>Edit Course</h1> <a href='#/course'>Save</a>. <a href='#/course'>Delete</a>"
+                templateUrl:"views/course/template/course_edit.view.html",
+                controller:"CourseEditController",
+                controllerAs:"model"
             })
             .when('/instructor/:instructorId/course/course-landing', {
                 templateUrl: "views/course/course-edit/templates/landing.view.client.html",

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-controller="CourseAllController">
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="menubar">
+            <div class="col-xs-7 col-sm-4 col-lg-2">
+                <div class="navbar-header">
+                    <a class="navbar-brand " href="#"><b>Education Portal</b></a>
+                </div>
+            </div>
+
+
+            <div class="col-xs-5 col-sm-5 col-lg-7">
+                <div class="input-group">
+                    <input type="text"
+                           placeholder="Search Courses"
+                           class="form-control">
+                    <span class="input-group-btn">
+            <a  href="#"
+                class="btn btn-default"
+                type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+            </span>
+                </div>
+            </div>
+
+            <div class="col-sm-1 hidden-xs">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/profile"> Profile</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+
+<div class=container-fluid id="course">
+    <h2>
+        All Courses
+    </h2>
+    <div class="list-courses">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div>
+                <a href="#/course/new">
+                    Add new course</a>
+                <img class="img-responsive" src="../../../img/plus%202.png">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3"
+             ng-repeat= "course in model.courses">
+            <div>
+                <a ng-click = "model.courseDetail(course)">
+                    <span>{{course.courseName}}</span>
+                    <img class="img-responsive"
+                         ng-src={{course.courseUrl}}>
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>

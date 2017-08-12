@@ -4,7 +4,7 @@
     angular.module('EducationPortal')
             .controller('createNewCourseController',createNewCourseController);
 
-    function createNewCourseController($routeParams,$location,courseService){
+    function createNewCourseController($routeParams,$location,CourseService){
         var model = this;
         model.instructorId=$routeParams.instructorId;
         model.createNewCourse  = createNewCourse;
@@ -15,8 +15,8 @@
         init();
 
         function createNewCourse(course){
-            courseService.createNewCourse(course);
-            var url = "/instructor/" + model.instructorId + "/course/course-landing";
+            CourseService.createNewCourse(course);
+            var url = "/course";
             $location.url(url);
         }
 
