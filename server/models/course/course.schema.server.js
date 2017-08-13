@@ -1,10 +1,13 @@
-var mongoose = require('mongoose');
+var mongoose= require ("mongoose");
 
-var courseSchema = mongoose.Schema({
-    title:String,
-    createdDate: {type: Date, default: Date.now},
-    author:[{type: mongoose.Schema.Types.ObjectId, ref: "UserModel"}],
-    description:String
-}, {collection: "course"});
+module.exports =function(){
 
-module.exports = courseSchema;
+    var CourseSchema = mongoose.Schema({
+        courseName:String,
+        courseNumber:String,
+        createdDate: {type: Date, default: Date.now},
+        courseInstructor: String,
+        courseDescription:String
+    }, {collection: "course"});
+    return CourseSchema;
+};

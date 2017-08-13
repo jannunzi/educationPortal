@@ -1,11 +1,10 @@
 
 (function () {
     angular.module('EducationPortal')
-        .factory('courseService', courseService);
+        .factory('CourseService', CourseService);
 
-    function courseService() {
+    function CourseService($http) {
 
-        var self = this;
         var courses =
             [
                 {
@@ -42,88 +41,14 @@
                 }
             ];
 
-        var requirements =
-            [
-                {"_id": "1", "courseId": "123", "detail": "Finish homework on time"},
-                {"_id": "2", "courseId": "123", "detail": "Took CS1110 before"},
-                {"_id": "3", "courseId": "123", "detail": "Know programming language"},
-                {"_id": "4", "courseId": "234", "detail": "Know python"}
-            ];
-
-        var learningAims =
-            [
-                {"_id": "1", "courseId": "123", "detail": "be able to build a personal website"},
-                {"_id": "2", "courseId": "123", "detail": "find a job"},
-                {"_id": "3", "courseId": "234", "detail": "know basic data structure"}
-            ];
-      
-       var lists =[{title:"General", link:'general'},
-            {title:"Learning Aims", link:'learningaims'},
-            {title:"Requirements", link:'requirements'},
-            {title:"Curriculum", link:"curriculum"},
-            {title:"Instructor", link:"instructor"},
-            {title:"Reviews", link:'reviews'}];
-
-        var curriculum =
-            [
-                {courseId: "123", _id:"1231", chapter:"Alice", description:"Wonderland"  },
-                {courseId: "123", _id:"1232", chapter:"Bob", description:"Wonderland"  },
-                {courseId: "123", _id:"1233", chapter:"Charly", description:"Wonderland"  }
-            ];
-        var course=
-            [
-                {_id: "123", instructorId: "123",    description: "alice",    review: "Alice",  courseName: "Wonder", curriculum:curriculum[0]  },
-                {_id: "234", instructorId: "123",      description: "bob",      review: "Bob",    courseName: "Marley", email: "bob@gmail.com", curriculum:curriculum[1]  },
-                {_id: "345", instructorId: "234",   description: "charly",   review: "Charly", courseName: "Garcia", curriculum:curriculum[2]  },
-                {_id: "456", instructorId: "234", description: "jannunzi", review: "Jose",   courseName: "Annunzi", curriculum:"aaaaa" }
-            ];
-        var instructors=[
-            {courseId: "123", instructorId:"123", instructorName:"Alice", instructorDescription:"Great teacher!!!", reviewsId:'123'},
-            {courseId: "234", instructorId:"234", instructorName:"Bob", instructorDescription:"Great teacher2!!!", reviewsId:'234'},
-            {courseId: "345", instructorId:"345", instructorName:"Charly", instructorDescription:"Great teacher3!!!", reviewsId:'345'}
-        ];
-
-        var reviews = [
-            {courseId:"123", reviewsId:"123", url:"https://github.com", title:"Best Teacher Ever!", details:"I've been trying to learn this material for a year, using multiple online bootcamps and courses. Colt is by far the best teacher that I've encountered, and his course is far more logically organized than any other course that I've encountered. "}
-        ];
-
-
         var api = {
+            "editCourse": editCourse,
             "createNewCourse": createNewCourse,
-            //"findCourseByCourseId": findCourseByCourseId,
-            "updateCourse": updateCourse,
-            "deleteCourse": deleteCourse,
-            "getRequirementsByCourseId": getRequirementsByCourseId,
-            "addRequirement": addRequirement,
-            "updateRequirement": updateRequirement,
-            "deleteRequirement": deleteRequirement,
-            "getlearningAimsByCourseId" : getlearningAimsByCourseId,
-            "deleteLearningAim" : deleteLearningAim,
-            "updateLearningAim" :updateLearningAim,
-            "addLearningAim" :addLearningAim,
-            "getAllCourses" :getAllCourses,
-            "findCourseByInstructorId" : findCourseByInstructorId,
-            //findCourseByCourseId : findCourseByCourseId,
-            "findCurriculumByCourseId": findCurriculumByCourseId,
-            "addCurriculumItem": addCurriculumItem,
-            "deleteCurriculumItem": deleteCurriculumItem,
-            "findInstructorById":findInstructorById,
-            "updateInstructorInfo": updateInstructorInfo,
-            "addReviews": addReviews,
-            "getList":getList,
-            "findCurriculumById": findCurriculumById
+            "findCourseByCourseId": findCourseByCourseId,
+            "getAllCourses" :getAllCourses
+
         };
-  
-
         return api;
-
-        /**
-         * Functions for all course page
-         */
-
-        function getSideList() {
-
-        }
 
         /**
          * Functions for landing page
@@ -131,13 +56,9 @@
 
         function getAllCourses(){
             return courses;
+            //return $http.get("/api/allCourses");
+
         }
-
-
-        /**
-         * Functions for course general page
-         *
-         */
 
         //Create new course
         function createNewCourse(course) {
@@ -147,6 +68,19 @@
             newCourse.courseNumber = course.courseNumber;
             newCourse.courseDescription = course.description;
             courses.push(newCourse);
+
+          //  return $http.post("/api/newCourse", course);
+        }
+
+        function editCourse(courseId,course){
+            for (var i in courses) {
+                console.log("******",i);
+                if(courses[i]._id === courseId) {
+                    courses[i] = course;
+                    return true;
+                }
+            }
+            return false;
         }
 
         //Find course by course id
@@ -159,9 +93,6 @@
                 }
             }
 
-       
-
-      
         function getList() {
             return lists;
         }
@@ -186,6 +117,8 @@
             }
             return false;
         }
+
+
 
         //Delete course
         function deleteCourse(courseId) {
@@ -318,9 +251,9 @@
         
         function findCourseByCourseId(courseId) {
             var results=[];
-            for( var c in course){
-                if(course[c]._id===courseId){
-                    results.push(course[c]);
+            for( var c in courses){
+                if(courses[c]._id===courseId){
+                    results.push(courses[c]);
                 }
             }
             return results;
@@ -365,41 +298,5 @@
             }
             return results;
         }
-
-        // function createUser(user) {
-        //     user._id=(new Date()).getTime()+'';
-        //     user.created = new Date();
-        //     users.push(user);
-        //     return user;
-        // }
-        //
-        // function findUserBycourseName(courseName) {
-        //     var user = users.find(function (user) {
-        //         return user.courseName === courseName;
-        //     });
-        //     if(typeof user ==='undefined'){
-        //         return null;
-        //     }
-        //     return user;
-        // }
-        //
-        // function findUserById(courseId) {
-        //     for(var u in users){
-        //         if(users[u]._id===courseId){
-        //             return users[u];
-        //         }
-        //     }
-        //     return null;
-        // }
-        //
-        // function findUserByCredentials(courseName, description) {
-        //     for(var u in users){
-        //         var user= users[u];
-        //         if(user.courseName === courseName && user.description === description){
-        //             return user;
-        //         }
-        //     }
-        //     return null;
-        // }
     }
 })();

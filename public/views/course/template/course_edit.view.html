@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-controller="CourseEditController">
+
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="menubar">
+            <div class="col-xs-7 col-sm-4 col-lg-2">
+                <div class="navbar-header">
+                    <a class="navbar-brand " href="#"><b>Education Portal</b></a>
+                </div>
+            </div>
+
+
+            <div class="col-xs-5 col-sm-5 col-lg-7">
+                <div class="input-group">
+                    <input type="text"
+                           placeholder="Search Courses"
+                           class="form-control">
+                    <span class="input-group-btn">
+            <a  href="#"
+                class="btn btn-default"
+                type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+            </span>
+                </div>
+            </div>
+
+            <div class="col-sm-1 hidden-xs">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/profile"> Profile</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid">
+    <div class="col-md-12">
+        <label for="name">Course Name</label>
+        <input id="name"
+               class="form-control"
+               value="Course Name"
+               ng-model="model.course[0].courseName"
+               type="text"
+               placeholder="course name"/>
+
+        <label for="courseNumber">Course number</label>
+        <input id="courseNumber"
+               class="form-control"
+               value="courseNumber"
+               ng-model="model.course[0].courseNumber"
+               type="text"
+               placeholder="course number"/>
+
+        <label for="courseInstructor">Course Instructor</label>
+        <input id="courseInstructor"
+               class="form-control"
+               value="courseInstructor"
+               ng-model="model.course[0].instructorId"
+               type="text"
+               placeholder="course instructor"/>
+
+        <label for="description">
+            Course Description
+        </label>
+        <textarea id="description"
+                  rows="8"
+                  ng-model="model.course[0].courseDescription"
+                  class="form-control">
+            </textarea>
+
+        <a class="btn btn-block btn-success"
+           ng-click="model.updateCourse(model.course[0])">Update</a>
+
+        <a class="btn btn-block btn-danger"
+           href="#/course">Cancel</a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+
