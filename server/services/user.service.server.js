@@ -34,14 +34,24 @@ module.exports = function (app, userModel) {
     function login(req, res) {
         var userName = req.body;
         userModel
-            .findUserByCredentials(userName)
-            .then(function (user)
-                {
-                    res.json(user);
-                        },
-                        function (err) {
-                            res.status(400).send(err);
-                        });
+            .findUserByUsername(userName.username)
+            .then(
+                function (user) {
+                    if (user) {
+                        // console.log(bcrypt.hashSync(userName.password) + "**"+
+                        //     userName.password +"**" + user.password);
+                            return res.json(userName);
+
+                    } else {
+                        res.status(400).send(err);
+                    }
+                },
+                function (err) {
+                    res.status(400).send(err);
+                }
+            );
+
+        //call login function after this
     }
 
     function updateUser(req, res) {
@@ -63,4 +73,4 @@ module.exports = function (app, userModel) {
                 });
 
     }
-}
+};

@@ -13,12 +13,11 @@ module.exports= function(db){
         updateUser:updateUser,
         getUserByUserName:getUserByUserName,
         findUserByCredentials : findUserByCredentials
-    }
+    };
     return api;
 
     function findUserByCredentials(credentials) {
         var deferred= q.defer();
-
         User.findOne (
             {"username": userName},
             function (err, stats) {
