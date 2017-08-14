@@ -1,0 +1,72 @@
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs">
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+            </div>
+        </div>
+
+        <div class="col-md-8 ">
+            <label for="Requirements">
+               Requirements
+            </label>
+            <ul class="list-group">
+                <li class="list-group-item no-border"
+                    ng-repeat="requirement in model.requirements">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input class="form-control"
+                                   value="Have a computer with Internet"
+                                   ng-model="requirement.detail"
+                                   type="text">
+                            </input>
+                        </div>
+
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-remove  pull-right btn btn-danger"
+                                  aria-hidden="true"
+                                  ng-click="model.deleteRequirement(requirement)">
+                            </span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-ok pull-right btn btn-success"
+                                  aria-hidden="true"
+                                  ng-click="model.updateRequirement(requirement)">
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item no-border">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input class="form-control"
+                                   type="text"
+                                   ng-model="model.newRequirement.detail"
+                                   placeholder="Please add new course requirement">
+                            </input>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-plus center-block btn btn-primary"
+                                  aria-hidden="true"
+                                  ng-click="model.addRequirement(model.newRequirement)">
+                            </span>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+

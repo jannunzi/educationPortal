@@ -4,6 +4,6 @@
             [   "ngRoute",
                 "ngRateIt",
                 "textAngular",
-                "ui.bootstrap"])
+                "ui.bootstrap"]);
 })();
 

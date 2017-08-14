@@ -1,0 +1,48 @@
+
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+            </div>
+        </div>
+
+
+        <div class="col-md-8 ">
+            <label for="LearningAims1">
+                Learning Aims
+            </label>
+            <ul class="list-group">
+                <li class="list-group-item no-border">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input class="form-control"
+                                   value="Make REAL web applications using cutting-edge technologies"
+                                   ng-model="course.newLearningAims"
+                                   type="text">
+                            </input>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="glyphicon glyphicon-plus  center-block btn btn-primary"
+                                  aria-hidden="true"
+                                  ng-click="model.addLearningAim(course)">
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

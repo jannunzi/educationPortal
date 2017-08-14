@@ -21,7 +21,7 @@ if(mlabUsername && mlabPassword) {
 mongoose.Promise = require('q').Promise;
 
 var db = mongoose.connect(connectionString);
-require("./public/server/app.js")(app,db);
+require("./server/app.js")(app,db);
 
 app.set('view engine', 'ejs');
 

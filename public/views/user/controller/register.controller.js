@@ -7,6 +7,7 @@
 
         var vm = this;
         vm.registerUser = registerUser;
+        vm.error = null;
 
         function init() {
 

@@ -1,0 +1,37 @@
+
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'"></div>
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs">
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <label for="name">Course Name</label>
+            <input id="name"
+                   class="form-control"
+                   ng-model="model.course.courseName"
+                   value="Course Name"
+                   type="text"
+                   placeholder="course name"/>
+
+            <label for="description">
+                Course Description
+            </label>
+            <textarea id="description"
+                      rows="8"
+                      ng-model="model.course.courseDescription"
+                      class="form-control">
+            </textarea>
+            <a class="btn btn-block btn-success"
+               ng-click="model.updateCourse(model.course)">update</a>
+            <a class="btn btn-block btn-danger"
+               ng-click="model.deleteCourse()">delete</a>
+        </div>
+    </div>
+</div>
+

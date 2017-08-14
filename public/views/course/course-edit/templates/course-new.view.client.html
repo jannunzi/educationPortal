@@ -1,0 +1,46 @@
+
+<div ng-include="'views/course/course-edit/templates/course.navbar.component.client.html'">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 hidden-sm hidden-xs website-new-column website-new-border">
+            <div ng-include="'views/course/course-edit/templates/course.component.client.html'">
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <label for="name">Course Name</label>
+            <input id="name"
+                   class="form-control"
+                   value="Course Name"
+                   ng-model="course.courseName"
+                   type="text"
+                   placeholder="course name"/>
+
+            <label for="courseNumber">Course number</label>
+            <input id="courseNumber"
+                   class="form-control"
+                   value="courseNumber"
+                   ng-model="course.courseNumber"
+                   type="text"
+                   placeholder="course number"/>
+
+            <label for="description">
+                Course Description
+            </label>
+            <textarea id="description"
+                      rows="8"
+                      ng-model="course.description"
+                      class="form-control">
+            </textarea>
+
+            <a class="btn btn-block btn-success"
+               ng-click="model.createNewCourse(course)">Create</a>
+
+            <a class="btn btn-block btn-danger"
+               href="#/instructor/{{model.instructorId}}/course/course-landing">Cancel</a>
+        </div>
+    </div>
+</div>
+
