@@ -20,7 +20,7 @@
                 .login(user)
                 .then(function (found) {
                     if(found !== null) {
-                        console.log("Controller success");
+                        $rootScope.currentUser = user;
                         $location.url('/profile');
                     } else {
                         vm.message = "sorry, " + username + " not found. please try again!";

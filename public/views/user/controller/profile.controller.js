@@ -7,15 +7,13 @@
     function ProfileController(UserService,$rootScope){
 
         var currentUser= $rootScope.currentUser;
-        console.log("currentuser", currentUser);
         var vm=this;
         vm.message= null;
-        console.log("first name ", currentUser.data.firstname);
-        vm.firstname=currentUser.data.firstname;
-        vm.lastname=currentUser.data.lastname;
-        vm.username=currentUser.data.username;
-        vm.password=currentUser.data.password;
-        vm.email=currentUser.data.email;
+        vm.username=currentUser.username;
+        vm.password=currentUser.password;
+        vm.firstname=currentUser.firstname;
+        vm.lastname=currentUser.lastname;
+        vm.email=currentUser.email;
         vm.update=update;
 
         function init(){

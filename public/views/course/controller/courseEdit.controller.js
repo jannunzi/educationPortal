@@ -21,9 +21,6 @@
 
         function updateCourse(course){
            // CourseService.updateCourse(courseId,course);
-
-            console.log("in edit controller", course);
-
             CourseService.editCourse(courseId,course);
             var url = "/course";
             $location.url(url);
